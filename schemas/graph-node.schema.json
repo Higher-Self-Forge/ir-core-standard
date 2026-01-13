@@ -1,0 +1,193 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ir-standard.org/schemas/v1.0/graph-node.schema.json",
+  "$comment": "IR v1.0 Core Standard | Copyright (c) 2026 Qori Labs | CC-BY-NC-SA-4.0",
+  "title": "IR Graph Node",
+  "description": "A portable node in an IR knowledge graph. Nodes represent entities, events, decisions, artifacts, and relations. Nodes MAY include edges to other nodes for local graph traversal. Implementations SHOULD treat `id` as immutable once issued.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "type",
+    "created_at",
+    "created_by"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Stable node identifier (UUID). MUST be globally unique within the deployment graph namespace."
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "entity",
+        "event",
+        "decision",
+        "artifact",
+        "relation"
+      ],
+      "description": "High-level node classification."
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Creation time (RFC 3339 / ISO 8601)."
+    },
+    "created_by": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Creator identifier (e.g., DID, URI, or local principal ID)."
+    },
+    "attributes": {
+      "type": "object",
+      "description": "Arbitrary attributes for domain-specific metadata. Implementations SHOULD keep this object JSON-serializable and sync-safe.",
+      "additionalProperties": true
+    },
+    "edges": {
+      "type": "array",
+      "description": "Optional outgoing edges to other nodes. Edges MAY be omitted when the graph is stored separately or when bandwidth is constrained.",
+      "items": {
+        "$ref": "#/$defs/Edge"
+      }
+    },
+    "content_hash": {
+      "type": "string",
+      "pattern": "^(?:[A-Fa-f0-9]{64}|z[1-9A-HJ-NP-Za-km-z]+|u[A-Za-z0-9\\-_]+)$",
+      "description": "Optional integrity hash over a canonical representation of the node content. Recommended for artifacts and decisions."
+    },
+    "signature": {
+      "$ref": "#/$defs/Signature",
+      "description": "Optional cryptographic proof/signature covering the node's canonical form."
+    }
+  },
+  "$defs": {
+    "Edge": {
+      "title": "Graph Edge",
+      "description": "A directed edge from this node to a target node.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "target_id",
+        "relation"
+      ],
+      "properties": {
+        "target_id": {
+          "type": "string",
+          "format": "uuid",
+          "description": "Target node UUID."
+        },
+        "relation": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Predicate/relation label (e.g., 'references', 'depends_on', 'approved_by')."
+        },
+        "weight": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Optional edge weight (0..1) indicating strength, confidence, or importance."
+        },
+        "metadata": {
+          "type": "object",
+          "description": "Optional edge metadata (e.g., evidence pointers, timestamps).",
+          "additionalProperties": true
+        }
+      }
+    },
+    "Signature": {
+      "title": "Signature / Proof",
+      "description": "A compact signature/proof object aligned with common W3C Verifiable Credentials proof fields. Implementations MAY use JWS, Linked Data Proofs, or other mechanisms. When present, fields SHOULD be sufficient to verify the attestation.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "created",
+        "verificationMethod",
+        "proofPurpose"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Signature/proof suite identifier (e.g., 'Ed25519Signature2020', 'JsonWebSignature2020', or 'Jws2020')."
+        },
+        "created": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp when the proof was created (RFC 3339 / ISO 8601)."
+        },
+        "verificationMethod": {
+          "type": "string",
+          "minLength": 1,
+          "description": "A URI identifying the verification method (often a DID URL)."
+        },
+        "proofPurpose": {
+          "type": "string",
+          "enum": [
+            "assertionMethod",
+            "authentication",
+            "capabilityInvocation",
+            "capabilityDelegation"
+          ],
+          "description": "Purpose of the proof, per VC patterns."
+        },
+        "domain": {
+          "type": "string",
+          "description": "Optional domain separation string to prevent cross-protocol replay."
+        },
+        "challenge": {
+          "type": "string",
+          "description": "Optional challenge/nonce to prevent replay."
+        },
+        "jws": {
+          "type": "string",
+          "description": "Detached or embedded JWS representation, if applicable."
+        },
+        "proofValue": {
+          "type": "string",
+          "description": "Base58/base64 proof value, if applicable (alternative to JWS)."
+        },
+        "cryptosuite": {
+          "type": "string",
+          "description": "Cryptographic suite identifier for data integrity proofs, if applicable."
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "id": "a3f2b9c4-0c25-4b2a-bc61-5ff2d9c3e1d7",
+      "type": "decision",
+      "created_at": "2026-01-10T15:20:05Z",
+      "created_by": "did:key:z6MktQoriCustodian1",
+      "attributes": {
+        "decision_id": "IR-GOV-DEC-2026-001",
+        "title": "Approve initial Boundary Cards for irrigation dataset",
+        "status": "approved",
+        "meeting_ref": "DEC-REG-2026-01-10"
+      },
+      "edges": [
+        {
+          "target_id": "0e0b8d2c-4c1e-47c1-9b9b-96d7d06a2a31",
+          "relation": "references"
+        },
+        {
+          "target_id": "7b9eacb8-28f1-4b0c-b9f1-08c9b1d1bbd2",
+          "relation": "approved_by",
+          "metadata": {
+            "body": "Council"
+          }
+        }
+      ],
+      "content_hash": "a3f2c7d78f8d7ab3c9b4a12cdbd2d3c8f056e4d1b8265f8c137f03c0d8d7a1b2",
+      "signature": {
+        "type": "Ed25519Signature2020",
+        "created": "2026-01-10T15:22:00Z",
+        "verificationMethod": "did:key:z6MktQoriCustodian1#z6MktQoriCustodian1",
+        "proofPurpose": "assertionMethod",
+        "proofValue": "z3vQJkQvExampleSignatureValue"
+      }
+    }
+  ]
+}

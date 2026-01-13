@@ -1,0 +1,183 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ir-standard.org/schemas/v1.0/audit-entry.schema.json",
+  "$comment": "IR v1.0 Core Standard | Copyright (c) 2026 Qori Labs | CC-BY-NC-SA-4.0",
+  "title": "IR Audit Entry (Hash-Chain)",
+  "description": "An append-only audit entry intended to be chained via hashes. Implementations MUST ensure `entry_hash` is computed over a canonical serialization of the entry fields (excluding signatures), and MUST ensure `prev_hash` equals the previous entry's `entry_hash`. Implementations SHOULD sign high-impact events and MUST preserve ordering by `sequence_number`.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "sequence_number",
+    "timestamp",
+    "event_type",
+    "actor",
+    "payload",
+    "prev_hash",
+    "entry_hash"
+  ],
+  "properties": {
+    "sequence_number": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Monotonic sequence number within an audit log stream. MUST increment by 1 for each new entry."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Event timestamp (RFC 3339 / ISO 8601). MUST reflect the time the event was recorded."
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "GOVERNANCE_DECISION",
+        "CONSENT_CHANGE",
+        "CONSTITUTION_UPDATE",
+        "DATA_ACCESS",
+        "SYSTEM_EVENT",
+        "SECURITY_ALERT",
+        "KILL_SWITCH_ACTIVATION"
+      ],
+      "description": "Audit event classification used for filtering and control gates."
+    },
+    "actor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id"
+      ],
+      "description": "Actor responsible for the event. For community governance, this SHOULD identify the accountable custodian or council body.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Actor identifier (DID/URI/local principal)."
+        },
+        "role": {
+          "type": "string",
+          "description": "Optional role label (e.g., 'custodian', 'council', 'operator')."
+        },
+        "display_name": {
+          "type": "string",
+          "description": "Optional human-readable name for UI/audits."
+        }
+      }
+    },
+    "payload": {
+      "type": "object",
+      "description": "Event payload. SHOULD be minimal but sufficient for review. Implementations SHOULD avoid embedding sensitive raw data; instead, include references and hashes.",
+      "additionalProperties": true
+    },
+    "prev_hash": {
+      "type": "string",
+      "pattern": "^(?:[A-Fa-f0-9]{64}|z[1-9A-HJ-NP-Za-km-z]+|u[A-Za-z0-9\\-_]+)$",
+      "description": "Hash of the previous entry in this log stream. For the first entry, implementations MAY use a well-defined genesis value and MUST document it."
+    },
+    "entry_hash": {
+      "type": "string",
+      "pattern": "^(?:[A-Fa-f0-9]{64}|z[1-9A-HJ-NP-Za-km-z]+|u[A-Za-z0-9\\-_]+)$",
+      "description": "Integrity hash of this entry computed over a canonical serialization of required fields. MUST be reproducible for verification. Any change to any covered field MUST change this value."
+    },
+    "signatures": {
+      "type": "array",
+      "description": "Optional signatures/proofs over the entry (or `entry_hash`). Strongly recommended for SECURITY_ALERT and KILL_SWITCH_ACTIVATION events.",
+      "items": {
+        "$ref": "#/$defs/Signature"
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Optional metadata (e.g., device identifiers, offline queue references, export batch IDs).",
+      "additionalProperties": true
+    }
+  },
+  "$defs": {
+    "Signature": {
+      "title": "Signature / Proof",
+      "description": "A compact signature/proof object aligned with common W3C Verifiable Credentials proof fields. Implementations MAY use JWS, Linked Data Proofs, or other mechanisms. When present, fields SHOULD be sufficient to verify the attestation.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "created",
+        "verificationMethod",
+        "proofPurpose"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Signature/proof suite identifier (e.g., 'Ed25519Signature2020', 'JsonWebSignature2020', or 'Jws2020')."
+        },
+        "created": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp when the proof was created (RFC 3339 / ISO 8601)."
+        },
+        "verificationMethod": {
+          "type": "string",
+          "minLength": 1,
+          "description": "A URI identifying the verification method (often a DID URL)."
+        },
+        "proofPurpose": {
+          "type": "string",
+          "enum": [
+            "assertionMethod",
+            "authentication",
+            "capabilityInvocation",
+            "capabilityDelegation"
+          ],
+          "description": "Purpose of the proof, per VC patterns."
+        },
+        "domain": {
+          "type": "string",
+          "description": "Optional domain separation string to prevent cross-protocol replay."
+        },
+        "challenge": {
+          "type": "string",
+          "description": "Optional challenge/nonce to prevent replay."
+        },
+        "jws": {
+          "type": "string",
+          "description": "Detached or embedded JWS representation, if applicable."
+        },
+        "proofValue": {
+          "type": "string",
+          "description": "Base58/base64 proof value, if applicable (alternative to JWS)."
+        },
+        "cryptosuite": {
+          "type": "string",
+          "description": "Cryptographic suite identifier for data integrity proofs, if applicable."
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "sequence_number": 42,
+      "timestamp": "2026-01-11T03:14:15Z",
+      "event_type": "DATA_ACCESS",
+      "actor": {
+        "id": "did:key:z6MkOperator1",
+        "role": "operator",
+        "display_name": "Node Operator"
+      },
+      "payload": {
+        "resource": "dataset:irrigation_sensors_v2",
+        "action": "read",
+        "purpose": "maintenance_diagnostics",
+        "query_hash": "b3c4d5e6f708192a3b4c5d6e7f8091a2b3c4d5e6f708192a3b4c5d6e7f8091a2"
+      },
+      "prev_hash": "a1b2c3d4e5f60718293a4b5c6d7e8f901234567890abcdef1234567890abcdef",
+      "entry_hash": "c0ffee254c0ffee254c0ffee254c0ffee254c0ffee254c0ffee254c0ffee25",
+      "signatures": [
+        {
+          "type": "JsonWebSignature2020",
+          "created": "2026-01-11T03:14:17Z",
+          "verificationMethod": "did:key:z6MkOperator1#z6MkOperator1",
+          "proofPurpose": "assertionMethod",
+          "jws": "eyJhbGciOiJFZERTQSJ9..example.detached.signature"
+        }
+      ]
+    }
+  ]
+}

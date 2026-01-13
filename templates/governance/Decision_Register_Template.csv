@@ -1,0 +1,13 @@
+# IR v1.0 Core Standard
+# Copyright (c) 2026 Qori Labs — Laboratorio de Tecnología de Interés Público
+# Licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+# https://creativecommons.org/licenses/by-nc-sa/4.0/
+# SPDX-License-Identifier: CC-BY-NC-SA-4.0
+#
+# Decision Register (CSV)
+# - Keep one row per decision.
+# - Store supporting evidence pointers (minutes, recordings, hashes) in Evidence_Refs.
+#
+Decision_ID,Date,Decision_Title,Decision_Type,Proposed_By,Decision_Body,Quorum_Met,Outcome,Vote_Summary,Scope_Impacted,Evidence_Refs,Notes
+IR-GOV-DEC-2026-001,2026-01-10,"Approve initial Boundary Cards for irrigation dataset",POLICY,"{{PROPOSED_BY}}","Council",TRUE,"Approved","6/7 in favor","boundary_cards:B-01..B-04","local://evidence/DEC-REG-2026-01-10.pdf|sha256:...",""
+IR-GOV-DEC-2026-002,2026-01-12,"Activate kill switch pending security review",SECURITY,"{{PROPOSED_BY}}","Custodians",TRUE,"Activated","2 custodians; emergency authority","system:kill_switch","local://evidence/SEC-ALERT-2026-01-12.md|sha256:...","Reassessment required within 72 hours"

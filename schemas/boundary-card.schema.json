@@ -1,0 +1,187 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ir-standard.org/schemas/v1.0/boundary-card.schema.json",
+  "$comment": "IR v1.0 Core Standard | Copyright (c) 2026 Qori Labs | CC-BY-NC-SA-4.0",
+  "title": "IR Boundary Card",
+  "description": "A boundary card encodes an ethical, cultural, legal, social, or technical constraint intended for both human review and technical enforcement hooks. Boundary cards SHOULD be referenced from constitutions and governance decisions.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "card_id",
+    "boundary_type",
+    "statement",
+    "enforcement_mechanism"
+  ],
+  "properties": {
+    "card_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Unique boundary card identifier (UUID/URI)."
+    },
+    "boundary_type": {
+      "type": "string",
+      "enum": [
+        "technical",
+        "social",
+        "legal",
+        "cultural"
+      ],
+      "description": "Boundary category."
+    },
+    "statement": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Human-legible boundary statement describing what MUST NOT happen or what MUST always happen."
+    },
+    "enforcement_mechanism": {
+      "type": "string",
+      "minLength": 1,
+      "description": "How the boundary is enforced (runtime control, process gate, legal instrument, audit check)."
+    },
+    "rationale": {
+      "type": "string",
+      "description": "Optional rationale explaining why the boundary exists (community values, risk mitigation, legal requirements)."
+    },
+    "exceptions": {
+      "type": "array",
+      "description": "Optional exceptions. Exceptions SHOULD be narrow, documented, and require explicit approval.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "condition",
+          "approval_required"
+        ],
+        "properties": {
+          "condition": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Condition under which the exception applies."
+          },
+          "approval_required": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Who must approve (e.g., 'council', 'two_custodians')."
+          },
+          "expiry": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Optional expiry timestamp for the exception."
+          }
+        }
+      }
+    },
+    "review_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Optional next review date for reaffirmation or amendment."
+    },
+    "approved_by": {
+      "type": "string",
+      "description": "Optional identifier of approving body/person (DID/URI)."
+    },
+    "linked_controls": {
+      "type": "array",
+      "description": "Optional list of linked technical controls (control IDs, policy engine rules, test case references).",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "signatures": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Signature"
+      },
+      "description": "Optional signatures/proofs over the boundary card."
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Optional metadata (locale, adoption references, UI tags)."
+    }
+  },
+  "$defs": {
+    "Signature": {
+      "title": "Signature / Proof",
+      "description": "A compact signature/proof object aligned with common W3C Verifiable Credentials proof fields. Implementations MAY use JWS, Linked Data Proofs, or other mechanisms. When present, fields SHOULD be sufficient to verify the attestation.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "created",
+        "verificationMethod",
+        "proofPurpose"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Signature/proof suite identifier (e.g., 'Ed25519Signature2020', 'JsonWebSignature2020', or 'Jws2020')."
+        },
+        "created": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp when the proof was created (RFC 3339 / ISO 8601)."
+        },
+        "verificationMethod": {
+          "type": "string",
+          "minLength": 1,
+          "description": "A URI identifying the verification method (often a DID URL)."
+        },
+        "proofPurpose": {
+          "type": "string",
+          "enum": [
+            "assertionMethod",
+            "authentication",
+            "capabilityInvocation",
+            "capabilityDelegation"
+          ],
+          "description": "Purpose of the proof, per VC patterns."
+        },
+        "domain": {
+          "type": "string",
+          "description": "Optional domain separation string to prevent cross-protocol replay."
+        },
+        "challenge": {
+          "type": "string",
+          "description": "Optional challenge/nonce to prevent replay."
+        },
+        "jws": {
+          "type": "string",
+          "description": "Detached or embedded JWS representation, if applicable."
+        },
+        "proofValue": {
+          "type": "string",
+          "description": "Base58/base64 proof value, if applicable (alternative to JWS)."
+        },
+        "cryptosuite": {
+          "type": "string",
+          "description": "Cryptographic suite identifier for data integrity proofs, if applicable."
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "card_id": "urn:ir:boundary:cusco-ayllu:B-03",
+      "boundary_type": "cultural",
+      "statement": "The system MUST NOT generate or share outputs that reveal sacred site locations or routes.",
+      "enforcement_mechanism": "Runtime control: geofence + redaction rule; Process control: cultural review required before publishing maps.",
+      "rationale": "Protect cultural heritage sites and prevent exploitation or harm.",
+      "exceptions": [
+        {
+          "condition": "Emergency response requested by community authority",
+          "approval_required": "council",
+          "expiry": "2026-02-01T00:00:00Z"
+        }
+      ],
+      "review_date": "2026-06-30",
+      "approved_by": "did:web:ayllu.example.org#council",
+      "linked_controls": [
+        "CTRL-RED-001",
+        "TEST-BOUNDARY-003"
+      ]
+    }
+  ]
+}
