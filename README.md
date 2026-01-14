@@ -7,22 +7,42 @@
 
   SPDX-License-Identifier: CC-BY-NC-SA-4.0
 -->
+# IR v1.0 Estándar Núcleo — Infraestructura de IA soberana y offline-first
 # IR v1.0 Core Standard — Sovereign Offline-First AI Infrastructure
 
 [![Version](https://img.shields.io/badge/version-v1.0.0-placeholder.svg)](#)
 [![License](https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-blue.svg)](LICENSE)
 [![Conformance](https://img.shields.io/badge/conformance-IR--Conformant%20%7C%20IR--Conformant%2B-placeholder.svg)](specification/conformance/checklist.md)
 
+**IR v1.0** define un estándar práctico y auditable para desplegar **infraestructura de IA soberana y offline-first** en comunidades con conectividad intermitente—centrado en expectativas de gobernanza de datos indígenas (Principios CARE, prácticas alineadas con OCAP®) y controles de integridad verificables.
+
 **IR v1.0** defines a practical, auditable standard for deploying **sovereign, offline-first AI infrastructure** in communities with intermittent connectivity—centering Indigenous data governance expectations (CARE Principles, OCAP®-aligned practices) and verifiable integrity controls.
+
+Este repositorio es la **referencia autorizada** para implementadores. Contiene:
+- **Esquemas JSON normativos** para las estructuras de datos principales
+- **Plantillas de gobernanza y consentimiento** adecuadas para despliegues liderados por la comunidad
+- **Guías de implementación y auditoría** con requisitos de conformidad
 
 This repository is the **authoritative reference** for implementers. It contains:
 - **Normative JSON Schemas** for core data structures
 - **Governance and consent templates** suitable for community-led deployments
 - **Implementation and audit guides** with conformance requirements
 
+> Licencia: **Creative Commons BY-NC-SA 4.0** (ver `LICENSE`).
+
 > License: **Creative Commons BY-NC-SA 4.0** (see `LICENSE`).
 
 ---
+
+## ¿Qué es IR v1.0?
+
+IR (Inteligencia Recíproca) es un marco abierto para construir y operar **sistemas de IA gobernados por la comunidad** que:
+- Funcionan **con prioridad offline** (sincronización store-and-forward, operación local resiliente)
+- Proveen **gobernanza verificable** (registros de decisiones, custodia y trazas de auditoría)
+- Implementan **controles de soberanía de datos** (consentimiento, límites y reglas exigibles)
+- Producen **integridad auditable** (cadenas hash, firmas/pruebas y compilación reproducible de constituciones)
+
+IR v1.0 está diseñado para ser implementable por terceros y seguir siendo **legible para la comunidad**: los artefactos de gobernanza son de primera clase, no un complemento.
 
 ## What is IR v1.0?
 
@@ -130,3 +150,4 @@ See `CONTRIBUTING.md`.
 Maintained by **Qori Labs — Laboratorio de Tecnología de Interés Público**.  
 Qori Labs organization: https://github.com/qori-labs
 # ir-core-standard
+# ir-core-standard-
