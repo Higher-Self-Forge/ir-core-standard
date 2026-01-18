@@ -75,7 +75,7 @@
     "prev_hash": {
       "type": "string",
       "pattern": "^(?:[A-Fa-f0-9]{64}|z[1-9A-HJ-NP-Za-km-z]+|u[A-Za-z0-9\\-_]+)$",
-      "description": "Hash of the previous entry in this log stream. For the first entry, implementations MAY use a well-defined genesis value and MUST document it."
+      "description": "Hash of the previous entry in this log stream. For the first entry in a stream (sequence_number = 1), prev_hash MUST be the fixed genesis value `0000000000000000000000000000000000000000000000000000000000000000`."
     },
     "entry_hash": {
       "type": "string",

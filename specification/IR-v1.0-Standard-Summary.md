@@ -55,6 +55,8 @@ Schema: `schemas/boundary-card.schema.json`
 
 Boundary Cards are the source of truth; Constitutions should reference them rather than duplicate content.
 
+Maintainer note (informative): if Boundary Card fields change, update both `boundary-card.schema.json` and the embedded Boundary Card definition in `constitution.schema.json` in lockstep.
+
 ### 2.4 Consent Records (FPIC)
 A **Consent Record** documents Free, Prior, and Informed Consent for a defined scope, with status transitions and evidence references. Consent records SHOULD include alignment notes to CARE Principles.
 

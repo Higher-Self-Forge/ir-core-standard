@@ -47,7 +47,7 @@ Include:
 List:
 - all `stream_id` values
 - current heads per stream (`entry_hash`)
-- genesis value policy (e.g., fixed string or null)
+- genesis value policy (fixed hash value; for sequence 1 use `0000000000000000000000000000000000000000000000000000000000000000`)
 - notes for multi-stream reconciliation, if used
 
 ## 3. Evidence references

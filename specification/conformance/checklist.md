@@ -42,6 +42,8 @@ Esta lista define requisitos normativos de conformidad para implementaciones **I
 
 ## IR-Conformant+ (extendido)
 
+Nota (informativa): Para validación automática adicional de eventos críticos, ver `specification/conformance/ir-conformant-plus-assertions.schema.json`.
+
 - [ ] **IR-CRYPTO-001:** Los manifiestos de constitución DEBERÍAN incluir `compiled_hash` y DEBEN incluir al menos una prueba/firma verificable cuando se publiquen externamente. | Evidence: {{EVIDENCE_IR-CRYPTO-001}}
 - [ ] **IR-CRYPTO-002:** Las entradas de auditoría SECURITY_ALERT y KILL_SWITCH_ACTIVATION DEBEN incluir al menos una firma/prueba verificable sobre `entry_hash`. | Evidence: {{EVIDENCE_IR-CRYPTO-002}}
 - [ ] **IR-AUD-003:** El sistema DEBERÍA proporcionar un reporte de conformidad legible por máquina que mapee requisitos a referencias de evidencia. | Evidence: {{EVIDENCE_IR-AUD-003}}
@@ -84,6 +86,8 @@ This checklist defines normative conformance requirements for **IR-Conformant** 
 ---
 
 ## IR-Conformant+ (extended)
+
+Note (informative): For additional machine-checkable assertions on critical events, see `specification/conformance/ir-conformant-plus-assertions.schema.json`.
 
 - [ ] **IR-CRYPTO-001:** Constitution manifests SHOULD include `compiled_hash` and MUST include at least one verifiable proof/signature when published externally. | Evidence: {{EVIDENCE_IR-CRYPTO-001}}
 - [ ] **IR-CRYPTO-002:** SECURITY_ALERT and KILL_SWITCH_ACTIVATION audit entries MUST include at least one verifiable signature/proof over `entry_hash`. | Evidence: {{EVIDENCE_IR-CRYPTO-002}}

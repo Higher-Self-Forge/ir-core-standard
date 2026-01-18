@@ -27,6 +27,12 @@ This means fields such as `sequence_number`, `stream_id`, `timestamp`, `event_ty
 
 If an optional field is absent, it is omitted from the canonicalized object.
 
+## 2.1 Genesis value
+
+For the first entry in a stream (`sequence_number = 1`), `prev_hash` MUST be the fixed genesis value:
+
+`0000000000000000000000000000000000000000000000000000000000000000`
+
 ## 3. Digest algorithm and representation
 
 - Digest algorithm MUST be SHA-256 over the canonicalized UTF-8 bytes.

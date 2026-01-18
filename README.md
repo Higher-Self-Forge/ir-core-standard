@@ -64,10 +64,10 @@ graph TD
 ### Enlaces rápidos
 
 #### Especificación normativa y conformidad
-- Resumen del estándar IR v1.0: [specification/IR-v1.0-Standard-Summary.md](specification/IR-v1.0-Standard-Summary.md)
+- Resumen del estándar IR v1.0: [specification/IR-v1.0-Standard-Summary.es-PE.md](specification/IR-v1.0-Standard-Summary.es-PE.md)
 - Lista de conformidad: [specification/conformance/checklist.md](specification/conformance/checklist.md)
-- Especificación de hashing y canonicalización: [specification/hash-and-canonicalization.md](specification/hash-and-canonicalization.md)
-- Formato mínimo de paquete de evidencia (informativo / no normativo): [specification/evidence-bundle-format.md](specification/evidence-bundle-format.md)
+- Especificación de hashing y canonicalización: [specification/hash-and-canonicalization.es-PE.md](specification/hash-and-canonicalization.es-PE.md)
+- Formato mínimo de paquete de evidencia (informativo / no normativo): [specification/evidence-bundle-format.es-PE.md](specification/evidence-bundle-format.es-PE.md)
 - Guía de implementación: [guides/guia-implementacion.md](guides/guia-implementacion.md)
 - Guía para auditoría: [guides/guia-auditoria.md](guides/guia-auditoria.md)
 - Apéndice Perú (informativo / no normativo): [specification/appendix-peru.md](specification/appendix-peru.md)
