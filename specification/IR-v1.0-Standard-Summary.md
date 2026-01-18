@@ -1,6 +1,7 @@
 <!--
   IR v1.0 Core Standard
-  Copyright (c) 2026 Qori Labs — Laboratorio de Tecnología de Interés Público
+  Copyright (c) 2026 Higher Self Forge Ltd (UK) — Owner/Rights Holder
+  Research & field lab: Qori Labs (Peru)
 
   Licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
   https://creativecommons.org/licenses/by-nc-sa/4.0/
@@ -97,3 +98,14 @@ IR v1.0 adopts established patterns when helpful:
 - Schema `$id` values are versioned under `/schemas/v1.0/`.
 - Backwards incompatible changes MUST increment the major version and update `$id` paths accordingly.
 - Normative requirement changes MUST be reflected in the conformance checklist.
+
+---
+
+## 7. License and stewardship
+
+This standard is licensed under CC BY-NC-SA 4.0.
+
+Owner/Rights Holder: Higher Self Forge Ltd (UK).  
+Research & field lab: Qori Labs (Peru).
+
+For commercial licensing inquiries or dual-licensing options, please contact Higher Self Forge Ltd.

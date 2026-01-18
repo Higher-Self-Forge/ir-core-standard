@@ -1,6 +1,7 @@
 <!--
   IR v1.0 Core Standard
-  Copyright (c) 2026 Qori Labs — Laboratorio de Tecnología de Interés Público
+  Copyright (c) 2026 Higher Self Forge Ltd (UK) — Owner/Rights Holder
+  Research & field lab: Qori Labs (Peru)
 
   Licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
   https://creativecommons.org/licenses/by-nc-sa/4.0/
@@ -19,6 +20,7 @@
 [![Versión](https://img.shields.io/badge/version-v1.0.0-placeholder.svg)](#)
 [![Licencia](https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-blue.svg)](LICENSE)
 [![Conformidad](https://img.shields.io/badge/conformance-IR--Conformant%20%7C%20IR--Conformant%2B-placeholder.svg)](specification/conformance/checklist.md)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18274616.svg)](https://doi.org/10.5281/zenodo.18274616)
 
 **IR v1.0** define un estándar práctico y auditable para desplegar **infraestructura de IA soberana y offline-first** en comunidades con conectividad intermitente—centrado en expectativas de gobernanza de datos indígenas (Principios CARE, prácticas alineadas con OCAP®) y controles de integridad verificables.
 
@@ -126,13 +128,16 @@ Nota: El contenido en Quechua aparecerá en un directorio dedicado (por ejemplo,
 ### Notas de licencia
 
 Este estándar se publica bajo CC BY-NC-SA 4.0 (ver LICENSE).
-Para consultas de licenciamiento comercial u opciones de doble licenciamiento, por favor contacte a Qori Labs.
+Para consultas de licenciamiento comercial u opciones de doble licenciamiento, por favor contacte a Higher Self Forge Ltd.
 
 ### Cómo citar (académico / institucional)
 
 Si citas este estándar en un paper, política, o documento de procurement:
 
 Higher Self Forge Ltd & Qori Labs. (2026). IR v1.0 Core Standard — Sovereign Offline-First AI Infrastructure (Versión 1.0.0). Repositorio del estándar IR. Licencia CC BY-NC-SA 4.0.
+
+**DOI (Zenodo):** https://doi.org/10.5281/zenodo.18274616
+Archivado en Zenodo: https://doi.org/10.5281/zenodo.18274616
 
 BibTeX sugerido:
 
@@ -158,7 +163,7 @@ Ver [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ### Organización
 
-Mantenido por Higher Self Forge Ltd (Reino Unido), con Qori Labs (Perú) como brazo de investigación y laboratorio de tecnología de interés público.
+Titular de derechos (Owner/Rights Holder): Higher Self Forge Ltd (UK). Laboratorio de investigación y campo (Research & field lab): Qori Labs (Peru).
 
 Nota: La traducción oficial al Quechua (Runasimi) se encuentra actualmente en desarrollo en coordinación con autoridades lingüísticas locales.
 
@@ -270,13 +275,16 @@ Note: Quechua content will be published in a dedicated directory (e.g., locales/
 ## License notes
 
 This standard is published under CC BY-NC-SA 4.0 (see LICENSE).
-For commercial licensing inquiries or dual-licensing options, please contact Qori Labs.
+For commercial licensing inquiries or dual-licensing options, please contact Higher Self Forge Ltd.
 
 ## Citation (academic / institutional)
 
 If you cite this standard in a paper, policy, or procurement document, use:
 
 Higher Self Forge Ltd & Qori Labs. (2026). IR v1.0 Core Standard — Sovereign Offline-First AI Infrastructure (Version 1.0.0). IR Core Standard repository. Licensed CC BY-NC-SA 4.0.
+
+**DOI (Zenodo):** https://doi.org/10.5281/zenodo.18274616
+Archived on Zenodo: https://doi.org/10.5281/zenodo.18274616
 
 Suggested BibTeX:
 
@@ -302,6 +310,6 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Stewardship
 
-Maintained by Higher Self Forge Ltd (United Kingdom), with Qori Labs (Peru) as the research arm and public-interest technology lab.
+Owner/Rights Holder: Higher Self Forge Ltd (UK). Research & field lab: Qori Labs (Peru).
 
 Note: Official Runasimi (Quechua) translation is currently under development in coordination with local linguistic authorities.

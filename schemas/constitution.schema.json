@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://ir-standard.org/schemas/v1.0/constitution.schema.json",
-  "$comment": "IR v1.0 Core Standard | Copyright (c) 2026 Qori Labs | CC-BY-NC-SA-4.0",
+  "$comment": "IR v1.0 Core Standard | Copyright (c) 2026 Higher Self Forge Ltd (UK) - Owner/Rights Holder | Research & field lab: Qori Labs (Peru) | CC-BY-NC-SA-4.0",
   "title": "IR Constitution Manifest",
   "description": "A manifest declaring enforceable principles, boundaries, and consent triggers governing an IR deployment. Constitutions SHOULD be compiled into an internal enforcement representation; `compiled_hash` attests to that compilation result. Proofs/signatures MAY follow W3C Verifiable Credentials proof patterns.",
   "type": "object",

@@ -1,6 +1,7 @@
 <!--
   IR v1.0 Core Standard
-  Copyright (c) 2026 Qori Labs — Laboratorio de Tecnología de Interés Público
+  Copyright (c) 2026 Higher Self Forge Ltd (UK) — Owner/Rights Holder
+  Research & field lab: Qori Labs (Peru)
 
   Licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
   https://creativecommons.org/licenses/by-nc-sa/4.0/
