@@ -43,17 +43,17 @@ IR v1.0 está diseñado para ser implementable por terceros y seguir siendo **le
 
 ```mermaid
 graph TD
-    subgraph Governance ["Governance Plane"]
-        C[Constitution Manifest] -->|Compiles to| R[Runtime Rules]
-        FPIC[Consent Records] -->|Unlocks| F[Features/Data]
+    subgraph Governance ["Plano de gobernanza"]
+        C[Manifiesto de Constitución] -->|Compila a| R[Reglas de ejecución]
+        FPIC[Registros de Consentimiento] -->|Desbloquea| F[Funciones/Datos]
     end
-    subgraph Operations ["Operational Plane"]
-        N[Graph Nodes] -->|Events| L[Audit Log]
-        L -->|Hash Chaining| H[Immutable Evidence]
+    subgraph Operations ["Plano operativo"]
+        N[Nodos de grafo] -->|Eventos| L[Registro de auditoría]
+        L -->|Encadenamiento de hash| H[Evidencia inmutable]
     end
-    subgraph Verification ["Audit Plane"]
-        H -->|Export| V[Verification Tool]
-        R -->|Constraints| N
+    subgraph Verification ["Plano de auditoría"]
+        H -->|Exporta| V[Herramienta de verificación]
+        R -->|Restricciones| N
     end
 ```
 
