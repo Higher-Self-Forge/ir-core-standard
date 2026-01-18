@@ -20,7 +20,7 @@
 [![Versión](https://img.shields.io/badge/version-v1.0.0-placeholder.svg)](#)
 [![Licencia](https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-blue.svg)](LICENSE)
 [![Conformidad](https://img.shields.io/badge/conformance-IR--Conformant%20%7C%20IR--Conformant%2B-placeholder.svg)](specification/conformance/checklist.md)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18274616.svg)](https://doi.org/10.5281/zenodo.18274616)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18274616-blue)](https://doi.org/10.5281/zenodo.18274616)
 
 **IR v1.0** define un estándar práctico y auditable para desplegar **infraestructura de IA soberana y offline-first** en comunidades con conectividad intermitente—centrado en expectativas de gobernanza de datos indígenas (Principios CARE, prácticas alineadas con OCAP®) y controles de integridad verificables.
 
