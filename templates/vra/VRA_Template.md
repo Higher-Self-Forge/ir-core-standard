@@ -10,7 +10,7 @@
 -->
 ---
 version: "1.0"
-status: "draft"
+status: "stable"
 locale: "en"
 agreement_id: "{{VRA_ID}}"
 effective_date: "{{EFFECTIVE_DATE}}"

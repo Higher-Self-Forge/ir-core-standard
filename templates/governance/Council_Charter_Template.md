@@ -10,7 +10,7 @@
 -->
 ---
 version: "1.0"
-status: "draft"
+status: "stable"
 locale: "en"
 community_name: "{{COMMUNITY_NAME}}"
 ---

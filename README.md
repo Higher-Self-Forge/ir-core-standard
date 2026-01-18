@@ -11,15 +11,15 @@
 
 # IR v1.0 Estándar Núcleo — Infraestructura de IA soberana y offline-first
 
-[Versión en Español](#versión-en-español) • [English Version](#english-version) • [Runasimi / Quechua (En proceso)](#)
+[Versión en Español](#versión-en-español) • [English Version](#english-version) • [Runasimi / Quechua (En proceso)](#hoja-de-ruta-runasimi--quechua-en-proceso)
 
 ---
 
 ## Versión en Español
 
-[![Versión](https://img.shields.io/badge/version-v1.0.0-placeholder.svg)](#)
+[![Versión](https://img.shields.io/badge/version-v1.0.0-blue.svg)](#)
 [![Licencia](https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-blue.svg)](LICENSE)
-[![Conformidad](https://img.shields.io/badge/conformance-IR--Conformant%20%7C%20IR--Conformant%2B-placeholder.svg)](specification/conformance/checklist.md)
+[![Conformidad](https://img.shields.io/badge/conformance-IR--Conformant%20%7C%20IR--Conformant%2B-brightgreen.svg)](specification/conformance/checklist.md)
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18274616-blue)](https://doi.org/10.5281/zenodo.18274616)
 
 **IR v1.0** define un estándar práctico y auditable para desplegar **infraestructura de IA soberana y offline-first** en comunidades con conectividad intermitente—centrado en expectativas de gobernanza de datos indígenas (Principios CARE, prácticas alineadas con OCAP®) y controles de integridad verificables.
@@ -30,6 +30,8 @@ Este repositorio es la **referencia autorizada** para implementadores. Contiene:
 - **Guías de implementación y auditoría** con requisitos de conformidad
 
 > Licencia: **Creative Commons BY-NC-SA 4.0** (ver [LICENSE](LICENSE)).
+
+**Política de idioma:** Para revisión en Perú, esta sección en español es la referencia primaria de lectura. La versión normativa del estándar es la inglesa; la versión en español es una traducción informativa. En caso de divergencias, prevalece la inglesa.
 
 ---
 
@@ -66,6 +68,7 @@ graph TD
 - Lista de conformidad: [specification/conformance/checklist.md](specification/conformance/checklist.md)
 - Guía de implementación: [guides/guia-implementacion.md](guides/guia-implementacion.md)
 - Guía para auditoría: [guides/guia-auditoria.md](guides/guia-auditoria.md)
+- Apéndice Perú (informativo / no normativo): [specification/appendix-peru.md](specification/appendix-peru.md)
 
 #### Esquemas principales (JSON Schema draft 2020-12)
 - Graph Node: [schemas/graph-node.schema.json](schemas/graph-node.schema.json)
@@ -75,12 +78,12 @@ graph TD
 - Boundary Card: [schemas/boundary-card.schema.json](schemas/boundary-card.schema.json)
 
 #### Plantillas de gobernanza y consentimiento
-- Council Charter: [templates/governance/Council_Charter_Template.md](templates/governance/Council_Charter_Template.md)
-- Decision Register (CSV): [templates/governance/Decision_Register_Template.csv](templates/governance/Decision_Register_Template.csv)
-- Custodian Declaration: [templates/governance/Custodian_Declaration_Template.md](templates/governance/Custodian_Declaration_Template.md)
-- FPIC Record (plantilla legible): [templates/consent/FPIC_Record_Template.md](templates/consent/FPIC_Record_Template.md)
-- Consent Materials Checklist: [templates/consent/Consent_Materials_Checklist.md](templates/consent/Consent_Materials_Checklist.md)
-- Value Return Agreement (VRA): [templates/vra/Plantilla_VRA.md](templates/vra/Plantilla_VRA.md)
+- Carta del Consejo: [templates/governance/Council_Charter_Template.es-PE.md](templates/governance/Council_Charter_Template.es-PE.md)
+- Registro de decisiones (CSV): [templates/governance/Decision_Register_Template.csv](templates/governance/Decision_Register_Template.csv)
+- Declaración de custodia: [templates/governance/Custodian_Declaration_Template.es-PE.md](templates/governance/Custodian_Declaration_Template.es-PE.md)
+- Registro FPIC (plantilla legible): [templates/consent/FPIC_Record_Template.md](templates/consent/FPIC_Record_Template.md)
+- Lista de materiales de consentimiento: [templates/consent/Consent_Materials_Checklist.es-PE.md](templates/consent/Consent_Materials_Checklist.es-PE.md)
+- Acuerdo de Retorno de Valor (VRA): [templates/vra/Plantilla_VRA.md](templates/vra/Plantilla_VRA.md)
 
 ### Niveles de conformidad
 
@@ -100,6 +103,15 @@ Una implementación es IR-Conformant+ si además:
 - Soporta documentación multi-locale y reportes de transparencia accesibles para la comunidad
 
 Ver la lista: [specification/conformance/checklist.md](specification/conformance/checklist.md).
+
+### Glosario (informativo)
+
+- **Dossier:** expediente/paquete de evidencia que respalda auditoría y revisión comunitaria.
+- **LVA:** prefijo de requisitos y expedientes para la línea base de consentimiento (categoría `LVA-*` en la lista de conformidad).
+- **FPIC:** Consentimiento Libre, Previo e Informado.
+- **VRA:** Acuerdo de Retorno de Valor.
+- **CARE:** principios CARE para gobernanza de datos indígenas.
+- **OCAP®:** principios de propiedad, control, acceso y posesión de datos indígenas.
 
 ### Hoja de ruta: Runasimi / Quechua (en proceso)
 
@@ -180,6 +192,8 @@ This repository is the authoritative reference for implementers. It contains:
 
 > License: Creative Commons BY-NC-SA 4.0 (see [LICENSE](LICENSE)).
 
+**Language policy:** For Peruvian review, the Spanish section is the primary reading reference. The normative version of the standard is English; Spanish is an informative translation. In case of discrepancies, the English text prevails.
+
 ## What is IR v1.0?
 
 IR (Inteligencia Recíproca / Reciprocal Intelligence) is an open framework for building and operating community-governed AI systems that:
@@ -213,6 +227,7 @@ graph TD
 - Conformance checklist: [specification/conformance/checklist.md](specification/conformance/checklist.md)
 - Implementation guide: [guides/implementation-guide.md](guides/implementation-guide.md)
 - Auditor guide: [guides/auditor-guide.md](guides/auditor-guide.md)
+- Peru appendix (informative / non-normative): [specification/appendix-peru.md](specification/appendix-peru.md)
 
 ### Core schemas (JSON Schema draft 2020-12)
 - Graph Node: [schemas/graph-node.schema.json](schemas/graph-node.schema.json)
@@ -247,6 +262,15 @@ An implementation is IR-Conformant+ if it additionally:
 - Supports multi-locale documentation and community-accessible transparency reports
 
 See the checklist: [specification/conformance/checklist.md](specification/conformance/checklist.md).
+
+## Glossary (informative)
+
+- **Dossier:** evidence bundle used for audit and community review.
+- **LVA:** requirement/dossier prefix for consent baseline items (category `LVA-*` in the conformance checklist).
+- **FPIC:** Free, Prior, and Informed Consent.
+- **VRA:** Value Return Agreement.
+- **CARE:** CARE Principles for Indigenous Data Governance.
+- **OCAP®:** principles for ownership, control, access, and possession of Indigenous data.
 
 ## Runasimi / Quechua roadmap (in progress)
 

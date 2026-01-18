@@ -8,6 +8,51 @@
 
   SPDX-License-Identifier: CC-BY-NC-SA-4.0
 -->
+# Lista de conformidad — IR v1.0
+
+Esta lista define requisitos normativos de conformidad para implementaciones **IR-Conformant** e **IR-Conformant+**.
+
+> Traducción informativa; ver versión normativa en inglés al final.
+
+**Cómo usarla**
+- Marque la casilla cuando el requisito se cumpla.
+- Complete el campo de evidencia con una ruta de archivo, URI o hash direccionado por contenido de un artefacto en el paquete de exportación.
+- Los IDs de requisitos mapean a categorías tipo Dossier (p. ej., `LVA-*`, `IR-GOV-*`, `IR-AUD-*`).
+
+> Nota: El delimitador `| Evidence:` se usa como una “columna de evidencia” consistente aunque sea una lista de tareas.
+
+---
+
+## IR-Conformant (mínimo)
+
+- [ ] **IR-SCHEMA-001:** El sistema DEBE producir artefactos que validen contra los esquemas JSON normativos en `schemas/`. | Evidence: {{EVIDENCE_IR-SCHEMA-001}}
+- [ ] **IR-GOV-001:** El despliegue DEBE contar con una Carta del Consejo adoptada (basada en `Council_Charter_Template.md`) con órgano decisorio nombrado y reglas de quórum. | Evidence: {{EVIDENCE_IR-GOV-001}}
+- [ ] **IR-GOV-002:** El despliegue DEBE mantener un Registro de Decisiones (CSV) con IDs de decisión trazables y resultados. | Evidence: {{EVIDENCE_IR-GOV-002}}
+- [ ] **IR-GOV-003:** El despliegue DEBE identificar al menos un Custodio y mantener Declaraciones de Custodia firmadas. | Evidence: {{EVIDENCE_IR-GOV-003}}
+- [ ] **LVA-001:** El despliegue DEBE tener una línea base de consentimiento auditable: al menos un Registro de Consentimiento (FPIC) que cubra todas las funciones habilitadas y categorías de datos. | Evidence: {{EVIDENCE_LVA-001}}
+- [ ] **LVA-002:** Las transiciones de estado de consentimiento (activo/revocado/vencido/sustituido) DEBEN registrarse y DEBEN afectar el cumplimiento (sin procesamiento fuera del alcance de consentimiento activo). | Evidence: {{EVIDENCE_LVA-002}}
+- [ ] **IR-CONST-001:** El despliegue DEBE tener un Manifiesto de Constitución que declare principios, límites y disparadores de consentimiento. | Evidence: {{EVIDENCE_IR-CONST-001}}
+- [ ] **IR-BOUND-001:** El despliegue DEBE tener al menos una Boundary Card vinculada a la Constitución o al Registro de Decisiones. | Evidence: {{EVIDENCE_IR-BOUND-001}}
+- [ ] **IR-AUD-001:** El sistema DEBE registrar eventos como Audit Entries encadenadas por hash y DEBE preservar el orden por `sequence_number`. | Evidence: {{EVIDENCE_IR-AUD-001}}
+- [ ] **IR-AUD-002:** La exportación de evidencia de auditoría DEBE incluir la cadena completa de auditoría e instrucciones de validación suficientes para recomputar hashes y verificar continuidad. | Evidence: {{EVIDENCE_IR-AUD-002}}
+- [ ] **IR-OPS-001:** El sistema DEBE soportar operación *Offline-First*: los artefactos DEBEN ser serializables, durables localmente y seguros para sincronización (store-and-forward aceptable). | Evidence: {{EVIDENCE_IR-OPS-001}}
+- [ ] **IR-SEC-001:** El sistema DEBE proveer una vía documentada de reporte de incidentes y DEBE registrar eventos SECURITY_ALERT en el registro de auditoría. | Evidence: {{EVIDENCE_IR-SEC-001}}
+
+---
+
+## IR-Conformant+ (extendido)
+
+- [ ] **IR-CRYPTO-001:** Los manifiestos de constitución DEBERÍAN incluir `compiled_hash` y DEBEN incluir al menos una prueba/firma verificable cuando se publiquen externamente. | Evidence: {{EVIDENCE_IR-CRYPTO-001}}
+- [ ] **IR-CRYPTO-002:** Las entradas de auditoría SECURITY_ALERT y KILL_SWITCH_ACTIVATION DEBEN incluir al menos una firma/prueba verificable sobre `entry_hash`. | Evidence: {{EVIDENCE_IR-CRYPTO-002}}
+- [ ] **IR-AUD-003:** El sistema DEBERÍA proporcionar un reporte de conformidad legible por máquina que mapee requisitos a referencias de evidencia. | Evidence: {{EVIDENCE_IR-AUD-003}}
+- [ ] **IR-BOUND-002:** Las Boundary Cards DEBEN aplicarse mediante controles de ejecución o de proceso con hooks testeables (p. ej., reglas de motor de políticas y pruebas unitarias/de integración). | Evidence: {{EVIDENCE_IR-BOUND-002}}
+- [ ] **LVA-003:** Los disparadores de consentimiento DEBEN implementarse de modo que habilitar una nueva función o ampliar el alcance bloquee la operación hasta que se registre una nueva decisión de consentimiento. | Evidence: {{EVIDENCE_LVA-003}}
+- [ ] **IR-GOV-004:** Los conflictos de interés DEBEN declararse y registrarse; las recusaciones DEBEN registrarse para decisiones relevantes. | Evidence: {{EVIDENCE_IR-GOV-004}}
+- [ ] **IR-TRANS-001:** El sistema DEBERÍA producir reportes periódicos de transparencia consumibles por miembros de la comunidad (multi-locale recomendado). | Evidence: {{EVIDENCE_IR-TRANS-001}}
+- [ ] **IR-RES-001:** El despliegue DEBERÍA documentar prácticas de resiliencia (backup/restore, recuperación ante desastres y gestión de colas offline). | Evidence: {{EVIDENCE_IR-RES-001}}
+
+---
+
 # Conformance Checklist — IR v1.0
 
 This checklist defines normative conformance requirements for **IR-Conformant** and **IR-Conformant+** implementations.

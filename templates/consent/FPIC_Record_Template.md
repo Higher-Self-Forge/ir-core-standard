@@ -10,7 +10,7 @@
 -->
 ---
 version: "1.0"
-status: "draft"
+status: "stable"
 locale_primary: "es-PE"
 locales_supported:
   - "es-PE"

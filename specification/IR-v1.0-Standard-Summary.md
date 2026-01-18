@@ -95,7 +95,7 @@ IR v1.0 adopts established patterns when helpful:
 
 ## 6. Versioning and change control
 
-- Schema `$id` values are versioned under `/schemas/v1.0/`.
+- Schema `$id` values are versioned under `/schemas/v1.0/` in their `$id` URLs; repository files live in `schemas/*.schema.json`.
 - Backwards incompatible changes MUST increment the major version and update `$id` paths accordingly.
 - Normative requirement changes MUST be reflected in the conformance checklist.
 
