@@ -9,7 +9,7 @@
   SPDX-License-Identifier: CC-BY-NC-SA-4.0
 -->
 
-# IR v1.0 Estándar Núcleo — Infraestructura de IA soberana y offline-first
+# IR v1.0 Estándar Núcleo — Infraestructura Soberana e Inteligencia Distribuida
 
 [Versión en Español](#versión-en-español) • [English Version](#english-version) • [Runasimi / Quechua (En proceso)](#hoja-de-ruta-runasimi--quechua-en-proceso)
 
@@ -31,7 +31,7 @@ Este repositorio es la **referencia autorizada** para implementadores. Contiene:
 
 > Licencia: **Creative Commons BY-NC-SA 4.0** (ver [LICENSE](LICENSE)).
 
-**Política de idioma:** Para revisión en Perú, esta sección en español es la referencia primaria de lectura. La versión normativa del estándar es la inglesa; la versión en español es una traducción informativa. En caso de divergencias, prevalece la inglesa.
+**Política de idioma:** Para fines de revisión en el Perú, este documento en español se proporciona como texto de referencia para lectura. La versión normativa del estándar es la inglesa; la versión en español es una traducción informativa. En caso de discrepancia, prevalecerá la versión en inglés.
 
 ---
 
@@ -153,16 +153,15 @@ Para consultas de licenciamiento comercial u opciones de doble licenciamiento, p
 
 Si citas este estándar en un paper, política, o documento de procurement:
 
-Higher Self Forge Ltd & Qori Labs. (2026). IR v1.0 Core Standard — Sovereign Offline-First AI Infrastructure (Versión 1.0.0). Repositorio del estándar IR. Licencia CC BY-NC-SA 4.0.
+Higher Self Forge Ltd & Qori Labs. (2026). IR v1.0 Core Standard — Sovereign Infrastructure & Distributed Intelligence (Versión 1.0.0). Repositorio del estándar IR. Licencia CC BY-NC-SA 4.0.
 
 **DOI (Zenodo):** https://doi.org/10.5281/zenodo.18274616
-Archivado en Zenodo: https://doi.org/10.5281/zenodo.18274616
 
 BibTeX sugerido:
 
 ```bibtex
 @misc{ir_core_standard_v1_2026,
-  title        = {IR v1.0 Core Standard — Sovereign Offline-First AI Infrastructure},
+  title        = {IR v1.0 Core Standard — Sovereign Infrastructure & Distributed Intelligence},
   author       = {{Higher Self Forge Ltd} and {Qori Labs}},
   year         = {2026},
   version      = {1.0.0},
@@ -188,7 +187,9 @@ Nota: La traducción oficial al Quechua (Runasimi) se encuentra actualmente en d
 
 ---
 
-# English Version
+<a id="english-version"></a>
+
+# IR v1.0 Core Standard — Sovereign Infrastructure & Distributed Intelligence
 
 **IR v1.0** defines a practical, auditable standard for deploying sovereign, offline-first AI infrastructure in communities with intermittent connectivity—centering Indigenous data governance expectations (CARE Principles, OCAP®-aligned practices) and verifiable integrity controls.
 
@@ -319,16 +320,15 @@ For commercial licensing inquiries or dual-licensing options, please contact Hig
 
 If you cite this standard in a paper, policy, or procurement document, use:
 
-Higher Self Forge Ltd & Qori Labs. (2026). IR v1.0 Core Standard — Sovereign Offline-First AI Infrastructure (Version 1.0.0). IR Core Standard repository. Licensed CC BY-NC-SA 4.0.
+Higher Self Forge Ltd & Qori Labs. (2026). IR v1.0 Core Standard — Sovereign Infrastructure & Distributed Intelligence (Version 1.0.0). IR Core Standard repository. Licensed CC BY-NC-SA 4.0.
 
 **DOI (Zenodo):** https://doi.org/10.5281/zenodo.18274616
-Archived on Zenodo: https://doi.org/10.5281/zenodo.18274616
 
 Suggested BibTeX:
 
 ```bibtex
 @misc{ir_core_standard_v1_2026,
-  title        = {IR v1.0 Core Standard — Sovereign Offline-First AI Infrastructure},
+  title        = {IR v1.0 Core Standard — Sovereign Infrastructure & Distributed Intelligence},
   author       = {{Higher Self Forge Ltd} and {Qori Labs}},
   year         = {2026},
   version      = {1.0.0},

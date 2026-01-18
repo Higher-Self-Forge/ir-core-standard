@@ -8,7 +8,7 @@
 
   SPDX-License-Identifier: CC-BY-NC-SA-4.0
 -->
-# IR v1.0 Standard Summary (Normative Overview)
+# IR v1.0 Standard Summary — Sovereign Infrastructure & Distributed Intelligence
 
 This document provides a concise overview of the **IR v1.0 Core Standard** and the normative artifacts in this repository.
 
