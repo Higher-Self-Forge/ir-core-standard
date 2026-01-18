@@ -64,8 +64,8 @@ graph TD
 #### Especificación normativa y conformidad
 - Resumen del estándar IR v1.0: [specification/IR-v1.0-Standard-Summary.md](specification/IR-v1.0-Standard-Summary.md)
 - Lista de conformidad: [specification/conformance/checklist.md](specification/conformance/checklist.md)
-- Guía de implementación: [guides/implementation-guide.md](guides/implementation-guide.md)
-- Guía para auditoría: [guides/auditor-guide.md](guides/auditor-guide.md)
+- Guía de implementación: [guides/guia-implementacion.md](guides/guia-implementacion.md)
+- Guía para auditoría: [guides/guia-auditoria.md](guides/guia-auditoria.md)
 
 #### Esquemas principales (JSON Schema draft 2020-12)
 - Graph Node: [schemas/graph-node.schema.json](schemas/graph-node.schema.json)
@@ -80,7 +80,7 @@ graph TD
 - Custodian Declaration: [templates/governance/Custodian_Declaration_Template.md](templates/governance/Custodian_Declaration_Template.md)
 - FPIC Record (plantilla legible): [templates/consent/FPIC_Record_Template.md](templates/consent/FPIC_Record_Template.md)
 - Consent Materials Checklist: [templates/consent/Consent_Materials_Checklist.md](templates/consent/Consent_Materials_Checklist.md)
-- Value Return Agreement (VRA): [templates/vra/VRA_Template.md](templates/vra/VRA_Template.md)
+- Value Return Agreement (VRA): [templates/vra/Plantilla_VRA.md](templates/vra/Plantilla_VRA.md)
 
 ### Niveles de conformidad
 
