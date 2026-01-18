@@ -7,34 +7,31 @@
 
   SPDX-License-Identifier: CC-BY-NC-SA-4.0
 -->
-# IR v1.0 Estándar Núcleo — Infraestructura de IA soberana y offline-first
-# IR v1.0 Core Standard — Sovereign Offline-First AI Infrastructure
 
-[![Version](https://img.shields.io/badge/version-v1.0.0-placeholder.svg)](#)
-[![License](https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-blue.svg)](LICENSE)
-[![Conformance](https://img.shields.io/badge/conformance-IR--Conformant%20%7C%20IR--Conformant%2B-placeholder.svg)](specification/conformance/checklist.md)
+# IR v1.0 Estándar Núcleo — Infraestructura de IA soberana y offline-first
+
+[Versión en Español](#versión-en-español) • [English Version](#english-version) • [Runasimi / Quechua (En proceso)](#)
+
+---
+
+## Versión en Español
+
+[![Versión](https://img.shields.io/badge/version-v1.0.0-placeholder.svg)](#)
+[![Licencia](https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-blue.svg)](LICENSE)
+[![Conformidad](https://img.shields.io/badge/conformance-IR--Conformant%20%7C%20IR--Conformant%2B-placeholder.svg)](specification/conformance/checklist.md)
 
 **IR v1.0** define un estándar práctico y auditable para desplegar **infraestructura de IA soberana y offline-first** en comunidades con conectividad intermitente—centrado en expectativas de gobernanza de datos indígenas (Principios CARE, prácticas alineadas con OCAP®) y controles de integridad verificables.
-
-**IR v1.0** defines a practical, auditable standard for deploying **sovereign, offline-first AI infrastructure** in communities with intermittent connectivity—centering Indigenous data governance expectations (CARE Principles, OCAP®-aligned practices) and verifiable integrity controls.
 
 Este repositorio es la **referencia autorizada** para implementadores. Contiene:
 - **Esquemas JSON normativos** para las estructuras de datos principales
 - **Plantillas de gobernanza y consentimiento** adecuadas para despliegues liderados por la comunidad
 - **Guías de implementación y auditoría** con requisitos de conformidad
 
-This repository is the **authoritative reference** for implementers. It contains:
-- **Normative JSON Schemas** for core data structures
-- **Governance and consent templates** suitable for community-led deployments
-- **Implementation and audit guides** with conformance requirements
-
-> Licencia: **Creative Commons BY-NC-SA 4.0** (ver `LICENSE`).
-
-> License: **Creative Commons BY-NC-SA 4.0** (see `LICENSE`).
+> Licencia: **Creative Commons BY-NC-SA 4.0** (ver [LICENSE](LICENSE)).
 
 ---
 
-## ¿Qué es IR v1.0?
+### ¿Qué es IR v1.0?
 
 IR (Inteligencia Recíproca) es un marco abierto para construir y operar **sistemas de IA gobernados por la comunidad** que:
 - Funcionan **con prioridad offline** (sincronización store-and-forward, operación local resiliente)
@@ -44,87 +41,105 @@ IR (Inteligencia Recíproca) es un marco abierto para construir y operar **siste
 
 IR v1.0 está diseñado para ser implementable por terceros y seguir siendo **legible para la comunidad**: los artefactos de gobernanza son de primera clase, no un complemento.
 
-## What is IR v1.0?
+```mermaid
+graph TD
+    subgraph Governance ["Governance Plane"]
+        C[Constitution Manifest] -->|Compiles to| R[Runtime Rules]
+        FPIC[Consent Records] -->|Unlocks| F[Features/Data]
+    end
+    subgraph Operations ["Operational Plane"]
+        N[Graph Nodes] -->|Events| L[Audit Log]
+        L -->|Hash Chaining| H[Immutable Evidence]
+    end
+    subgraph Verification ["Audit Plane"]
+        H -->|Export| V[Verification Tool]
+        R -->|Constraints| N
+    end
+```
 
-IR (Inteligencia Recíproca) is an open framework for building and operating **community-governed AI systems** that:
-- Work **offline first** (store-and-forward sync, resilient local operation)
-- Provide **verifiable governance** (decision records, custodianship, and audit trails)
-- Implement **data sovereignty controls** (consent, boundaries, and enforceable rules)
-- Produce **auditable integrity** (hash-chains, signatures/proofs, and reproducible compilation of constitutions)
+### Enlaces rápidos
 
-IR v1.0 is designed to be implementable by third parties while remaining **community-legible**: the governance artifacts are first-class, not an afterthought.
+#### Especificación normativa y conformidad
+- Resumen del estándar IR v1.0: [specification/IR-v1.0-Standard-Summary.md](specification/IR-v1.0-Standard-Summary.md)
+- Lista de conformidad: [specification/conformance/checklist.md](specification/conformance/checklist.md)
+- Guía de implementación: [guides/implementation-guide.md](guides/implementation-guide.md)
+- Guía para auditoría: [guides/auditor-guide.md](guides/auditor-guide.md)
 
----
+#### Esquemas principales (JSON Schema draft 2020-12)
+- Graph Node: [schemas/graph-node.schema.json](schemas/graph-node.schema.json)
+- Constitution Manifest: [schemas/constitution.schema.json](schemas/constitution.schema.json)
+- Audit Entry (hash-chain): [schemas/audit-entry.schema.json](schemas/audit-entry.schema.json)
+- Consent Record (FPIC): [schemas/consent-record.schema.json](schemas/consent-record.schema.json)
+- Boundary Card: [schemas/boundary-card.schema.json](schemas/boundary-card.schema.json)
 
-## Quick links
+#### Plantillas de gobernanza y consentimiento
+- Council Charter: [templates/governance/Council_Charter_Template.md](templates/governance/Council_Charter_Template.md)
+- Decision Register (CSV): [templates/governance/Decision_Register_Template.csv](templates/governance/Decision_Register_Template.csv)
+- Custodian Declaration: [templates/governance/Custodian_Declaration_Template.md](templates/governance/Custodian_Declaration_Template.md)
+- FPIC Record (plantilla legible): [templates/consent/FPIC_Record_Template.md](templates/consent/FPIC_Record_Template.md)
+- Consent Materials Checklist: [templates/consent/Consent_Materials_Checklist.md](templates/consent/Consent_Materials_Checklist.md)
+- Value Return Agreement (VRA): [templates/vra/VRA_Template.md](templates/vra/VRA_Template.md)
 
-### Normative specification & conformance
-- IR v1.0 Standard Summary: `specification/IR-v1.0-Standard-Summary.md`
-- Conformance checklist: `specification/conformance/checklist.md`
-- Implementation guide: `guides/implementation-guide.md`
-- Auditor guide: `guides/auditor-guide.md`
+### Niveles de conformidad
 
-### Core schemas (JSON Schema draft 2020-12)
-- Graph Node: `schemas/graph-node.schema.json`
-- Constitution Manifest: `schemas/constitution.schema.json`
-- Audit Entry (hash-chain): `schemas/audit-entry.schema.json`
-- Consent Record (FPIC): `schemas/consent-record.schema.json`
-- Boundary Card: `schemas/boundary-card.schema.json`
+IR v1.0 define dos niveles prácticos de conformidad:
 
-### Governance & consent templates
-- Council Charter: `templates/governance/Council_Charter_Template.md`
-- Decision Register (CSV): `templates/governance/Decision_Register_Template.csv`
-- Custodian Declaration: `templates/governance/Custodian_Declaration_Template.md`
-- FPIC Record template: `templates/consent/FPIC_Record_Template.md`
-- Consent Materials Checklist: `templates/consent/Consent_Materials_Checklist.md`
-- Value Return Agreement (VRA): `templates/vra/VRA_Template.md`
+#### IR-Conformant (mínimo)
+Una implementación es IR-Conformant si:
+- Produce artefactos válidos que cumplen los esquemas requeridos (audit entries, consent records, constituciones, boundary cards, graph nodes)
+- Implementa una base mínima de gobernanza (council charter + decision register + custodios nombrados)
+- Mantiene un registro de auditoría verificable (entradas encadenadas por hash) y soporta exportación de evidencia para revisión
 
----
+#### IR-Conformant+ (extendido)
+Una implementación es IR-Conformant+ si además:
+- Implementa pruebas/firmas criptográficas para compilación de constituciones y eventos críticos de auditoría
+- Provee reportes automáticos de conformidad (evidencia checklist legible por máquina)
+- Aplica boundary cards y triggers de consentimiento en controles operativos con hooks testeables
+- Soporta documentación multi-locale y reportes de transparencia accesibles para la comunidad
 
-## Conformance levels
+Ver la lista: [specification/conformance/checklist.md](specification/conformance/checklist.md).
 
-IR v1.0 defines two practical conformance levels:
+### Hoja de ruta: Runasimi / Quechua (en proceso)
 
-### IR-Conformant (minimum)
-An implementation is **IR-Conformant** if it:
-- Produces valid artifacts matching all **required** schemas (audit entries, consent records, constitutions, boundary cards, graph nodes)
-- Implements a minimum governance baseline (council charter + decision register + named custodians)
-- Maintains a verifiable audit log (hash-chained entries) and supports evidence export for review
+Estamos desarrollando una versión oficial en Runasimi (Quechua) para que el estándar sea más accesible y usable en contextos comunitarios. La traducción se acompañará de glosario y decisiones terminológicas para mantener fidelidad técnica y legibilidad cultural.
 
-### IR-Conformant+ (extended)
-An implementation is **IR-Conformant+** if it additionally:
-- Implements cryptographic proofs/signatures for constitution compilation and critical audit events
-- Provides automated conformance reporting (machine-readable checklist evidence)
-- Enforces boundary cards and consent triggers in runtime controls with testable hooks
-- Supports multi-locale documentation and community-accessible transparency reports
+Plan de trabajo (alto nivel):
+- Fase 1 — Glosario y términos clave: definición de equivalencias (gobernanza, consentimiento, límites, auditoría, evidencia, hashes).
+- Fase 2 — Plantillas comunitarias primero: FPIC Record, Consent Materials Checklist, Council Charter (prioridad por uso en asamblea).
+- Fase 3 — Resumen del estándar: traducción de specification/IR-v1.0-Standard-Summary.md.
+- Fase 4 — Guías (implementación/auditoría): traducción parcial con secciones críticas para facilitadores.
+- Fase 5 — Revisión y validación comunitaria: iteración con autoridades lingüísticas y revisores locales; publicación por versiones.
 
-See the checklist: `specification/conformance/checklist.md`.
+Nota: El contenido en Quechua aparecerá en un directorio dedicado (por ejemplo, locales/quz/) cuando esté listo.
 
----
+### Estructura del repositorio
 
-## Repository structure
+```text
+/
+├── schemas/         # Normative JSON Schemas (Validation)
+├── templates/       # Governance & Consent Templates (Usage)
+├── specification/   # Standard Summary & Conformance Rules
+├── guides/          # Implementation & Audit Manuals
+└── CHANGELOG.md     # Version History
+```
 
-- `schemas/` — Normative JSON Schemas for IR v1.0 data objects  
-- `templates/` — Community governance, consent, and partnership templates  
-- `specification/` — Standard summary + conformance requirements  
-- `guides/` — Implementation and audit guides  
-- `CHANGELOG.md` — Release history  
-- `CONTRIBUTING.md` — How to contribute proposals and patches  
+### Notas de licencia
 
----
+Este estándar se publica bajo CC BY-NC-SA 4.0 (ver LICENSE).
+Para consultas de licenciamiento comercial u opciones de doble licenciamiento, por favor contacte a Qori Labs.
 
-## Citation (academic / institutional)
+### Cómo citar (académico / institucional)
 
-If you cite this standard in a paper, policy, or procurement document, use:
+Si citas este estándar en un paper, política, o documento de procurement:
 
-> Qori Labs. (2026). *IR v1.0 Core Standard — Sovereign Offline-First AI Infrastructure* (Version 1.0.0). IR Core Standard repository. Licensed CC BY-NC-SA 4.0.
+Higher Self Forge Ltd & Qori Labs. (2026). IR v1.0 Core Standard — Sovereign Offline-First AI Infrastructure (Versión 1.0.0). Repositorio del estándar IR. Licencia CC BY-NC-SA 4.0.
 
-Suggested BibTeX:
+BibTeX sugerido:
 
 ```bibtex
 @misc{ir_core_standard_v1_2026,
   title        = {IR v1.0 Core Standard — Sovereign Offline-First AI Infrastructure},
-  author       = {{Qori Labs}},
+  author       = {{Higher Self Forge Ltd} and {Qori Labs}},
   year         = {2026},
   version      = {1.0.0},
   howpublished = {IR Core Standard repository},
@@ -132,24 +147,161 @@ Suggested BibTeX:
 }
 ```
 
+### Gobernanza de este repositorio
+
+Este repositorio sigue un flujo de trabajo de estándar público:
+- Issues y PRs se usan para proponer cambios.
+- Cambios normativos deben actualizar CHANGELOG.md y requisitos de conformidad.
+- Cambios en esquemas deben ser compatibles hacia atrás dentro de v1.0, salvo que se versionen explícitamente.
+
+Ver [CONTRIBUTING.md](CONTRIBUTING.md).
+
+### Organización
+
+Mantenido por Higher Self Forge Ltd (Reino Unido), con Qori Labs (Perú) como brazo de investigación y laboratorio de tecnología de interés público.
+
+Nota: La traducción oficial al Quechua (Runasimi) se encuentra actualmente en desarrollo en coordinación con autoridades lingüísticas locales.
+
 ---
+
+# English Version
+
+**IR v1.0** defines a practical, auditable standard for deploying sovereign, offline-first AI infrastructure in communities with intermittent connectivity—centering Indigenous data governance expectations (CARE Principles, OCAP®-aligned practices) and verifiable integrity controls.
+
+This repository is the authoritative reference for implementers. It contains:
+- Normative JSON Schemas for core data structures
+- Governance and consent templates suitable for community-led deployments
+- Implementation and audit guides with conformance requirements
+
+> License: Creative Commons BY-NC-SA 4.0 (see [LICENSE](LICENSE)).
+
+## What is IR v1.0?
+
+IR (Inteligencia Recíproca / Reciprocal Intelligence) is an open framework for building and operating community-governed AI systems that:
+- Work offline first (store-and-forward sync, resilient local operation)
+- Provide verifiable governance (decision records, custodianship, and audit trails)
+- Implement data sovereignty controls (consent, boundaries, and enforceable rules)
+- Produce auditable integrity (hash-chains, signatures/proofs, and reproducible compilation of constitutions)
+
+IR v1.0 is designed to be implementable by third parties while remaining community-legible: the governance artifacts are first-class, not an afterthought.
+
+```mermaid
+graph TD
+    subgraph Governance ["Governance Plane"]
+        C[Constitution Manifest] -->|Compiles to| R[Runtime Rules]
+        FPIC[Consent Records] -->|Unlocks| F[Features/Data]
+    end
+    subgraph Operations ["Operational Plane"]
+        N[Graph Nodes] -->|Events| L[Audit Log]
+        L -->|Hash Chaining| H[Immutable Evidence]
+    end
+    subgraph Verification ["Audit Plane"]
+        H -->|Export| V[Verification Tool]
+        R -->|Constraints| N
+    end
+```
+
+## Quick links
+
+### Normative specification & conformance
+- IR v1.0 Standard Summary: [specification/IR-v1.0-Standard-Summary.md](specification/IR-v1.0-Standard-Summary.md)
+- Conformance checklist: [specification/conformance/checklist.md](specification/conformance/checklist.md)
+- Implementation guide: [guides/implementation-guide.md](guides/implementation-guide.md)
+- Auditor guide: [guides/auditor-guide.md](guides/auditor-guide.md)
+
+### Core schemas (JSON Schema draft 2020-12)
+- Graph Node: [schemas/graph-node.schema.json](schemas/graph-node.schema.json)
+- Constitution Manifest: [schemas/constitution.schema.json](schemas/constitution.schema.json)
+- Audit Entry (hash-chain): [schemas/audit-entry.schema.json](schemas/audit-entry.schema.json)
+- Consent Record (FPIC): [schemas/consent-record.schema.json](schemas/consent-record.schema.json)
+- Boundary Card: [schemas/boundary-card.schema.json](schemas/boundary-card.schema.json)
+
+### Governance & consent templates
+- Council Charter: [templates/governance/Council_Charter_Template.md](templates/governance/Council_Charter_Template.md)
+- Decision Register (CSV): [templates/governance/Decision_Register_Template.csv](templates/governance/Decision_Register_Template.csv)
+- Custodian Declaration: [templates/governance/Custodian_Declaration_Template.md](templates/governance/Custodian_Declaration_Template.md)
+- FPIC Record template: [templates/consent/FPIC_Record_Template.md](templates/consent/FPIC_Record_Template.md)
+- Consent Materials Checklist: [templates/consent/Consent_Materials_Checklist.md](templates/consent/Consent_Materials_Checklist.md)
+- Value Return Agreement (VRA): [templates/vra/VRA_Template.md](templates/vra/VRA_Template.md)
+
+## Conformance levels
+
+IR v1.0 defines two practical conformance levels:
+
+### IR-Conformant (minimum)
+An implementation is IR-Conformant if it:
+- Produces valid artifacts matching all required schemas (audit entries, consent records, constitutions, boundary cards, graph nodes)
+- Implements a minimum governance baseline (council charter + decision register + named custodians)
+- Maintains a verifiable audit log (hash-chained entries) and supports evidence export for review
+
+### IR-Conformant+ (extended)
+An implementation is IR-Conformant+ if it additionally:
+- Implements cryptographic proofs/signatures for constitution compilation and critical audit events
+- Provides automated conformance reporting (machine-readable checklist evidence)
+- Enforces boundary cards and consent triggers in runtime controls with testable hooks
+- Supports multi-locale documentation and community-accessible transparency reports
+
+See the checklist: [specification/conformance/checklist.md](specification/conformance/checklist.md).
+
+## Runasimi / Quechua roadmap (in progress)
+
+We are developing an official Runasimi (Quechua) version to make the standard more accessible and usable in community contexts. The translation will be accompanied by a glossary and terminology decisions to preserve technical fidelity and cultural legibility.
+
+Work plan (high level):
+- Phase 1 — Glossary & key terms: define equivalents for governance, consent, boundaries, audit, evidence, hashes.
+- Phase 2 — Community templates first: FPIC Record, Consent Materials Checklist, Council Charter (priority for assembly use).
+- Phase 3 — Standard summary: translate specification/IR-v1.0-Standard-Summary.md.
+- Phase 4 — Guides (implementation/audit): partial translation focusing on critical sections for facilitators.
+- Phase 5 — Review & community validation: iterate with local linguistic authorities and reviewers; publish by version.
+
+Note: Quechua content will be published in a dedicated directory (e.g., locales/quz/) when ready.
+
+## Repository structure
+
+```text
+/
+├── schemas/         # Normative JSON Schemas (Validation)
+├── templates/       # Governance & Consent Templates (Usage)
+├── specification/   # Standard Summary & Conformance Rules
+├── guides/          # Implementation & Audit Manuals
+└── CHANGELOG.md     # Version History
+```
+
+## License notes
+
+This standard is published under CC BY-NC-SA 4.0 (see LICENSE).
+For commercial licensing inquiries or dual-licensing options, please contact Qori Labs.
+
+## Citation (academic / institutional)
+
+If you cite this standard in a paper, policy, or procurement document, use:
+
+Higher Self Forge Ltd & Qori Labs. (2026). IR v1.0 Core Standard — Sovereign Offline-First AI Infrastructure (Version 1.0.0). IR Core Standard repository. Licensed CC BY-NC-SA 4.0.
+
+Suggested BibTeX:
+
+```bibtex
+@misc{ir_core_standard_v1_2026,
+  title        = {IR v1.0 Core Standard — Sovereign Offline-First AI Infrastructure},
+  author       = {{Higher Self Forge Ltd} and {Qori Labs}},
+  year         = {2026},
+  version      = {1.0.0},
+  howpublished = {IR Core Standard repository},
+  note         = {Licensed under CC BY-NC-SA 4.0}
+}
+```
 
 ## Governance of this repository
 
 This repository follows a public standards workflow:
 - Issues and PRs are used to propose changes.
-- Normative changes should update `CHANGELOG.md` and conformance requirements.
+- Normative changes should update CHANGELOG.md and conformance requirements.
 - Schema changes must be backwards-compatible within v1.0 unless explicitly versioned.
 
-See `CONTRIBUTING.md`.
+See [CONTRIBUTING.md](CONTRIBUTING.md).
 
----
+## Stewardship
 
-## Organization
+Maintained by Higher Self Forge Ltd (United Kingdom), with Qori Labs (Peru) as the research arm and public-interest technology lab.
 
-Maintained by **Qori Labs — Laboratorio de Tecnología de Interés Público**.  
-Qori Labs organization: https://github.com/qori-labs
-# ir-core-standard
-# ir-core-standard-
-# ir-core-standard-
-# ir-core-standard-
+Note: Official Runasimi (Quechua) translation is currently under development in coordination with local linguistic authorities.
