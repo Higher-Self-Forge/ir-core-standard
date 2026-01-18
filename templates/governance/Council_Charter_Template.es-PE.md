@@ -9,7 +9,7 @@
   SPDX-License-Identifier: CC-BY-NC-SA-4.0
 -->
 ---
-version: "1.0"
+version: "1.0.0"
 status: "stable"
 locale: "es-PE"
 community_name: "{{COMMUNITY_NAME}}"
@@ -17,7 +17,7 @@ community_name: "{{COMMUNITY_NAME}}"
 
 # Carta del Consejo — {{COMMUNITY_NAME}}
 
-> Traducción informativa; ver versión normativa si aplica. (Informativo / no normativo).
+> Plantilla localizada (es-PE). Para discrepancias técnicas del estándar, prevalece la versión inglesa del estándar; este documento, una vez adoptado por la comunidad, es normativo para el despliegue.
 
 <!--
 INSTRUCCIONES:

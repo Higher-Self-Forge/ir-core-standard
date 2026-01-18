@@ -12,6 +12,8 @@
 
 Esta guía ayuda a las entidades implementadoras a construir un sistema conforme a IR v1.0 (Ayni Algorítmico). Está escrita para ser accionable por equipos de ingeniería y facilitadores de gobernanza.
 
+> Traducción informativa; la versión normativa es la guía en inglés: `guides/implementation-guide.md`.
+
 ---
 
 ## 1. Prerrequisitos
@@ -73,8 +75,9 @@ Referencias de evidencia:
 Pasos:
 1. Redactar un Manifiesto de Constitución (`schemas/constitution.schema.json`).
 2. Crear Boundary Cards (`schemas/boundary-card.schema.json`) para restricciones de alto riesgo.
-3. Aprobar mediante decisión del Consejo y registrar en el Registro de Decisiones.
-4. (Recomendado) Compilar la constitución en reglas de cumplimiento y calcular `compiled_hash`.
+3. Referenciar las Boundary Cards desde la Constitución para evitar duplicación y deriva.
+4. Aprobar mediante decisión del Consejo y registrar en el Registro de Decisiones.
+5. (Recomendado) Compilar la constitución en reglas de cumplimiento y calcular `compiled_hash`.
 
 Riesgos y mitigaciones:
 - **Riesgo:** los límites existen solo en papel.  
@@ -101,6 +104,7 @@ Pasos:
    - Constituciones, boundary cards, registros de consentimiento, decisiones, entradas de auditoría
 2. Implementar soporte de Graph Nodes (`schemas/graph-node.schema.json`) para vincular artefactos y decisiones.
 3. Implementar paquetes de exportación para auditoría y revisión (zip/tar con hashes).
+4. Si existen múltiples streams de auditoría, incluir un manifiesto de streams (lista de stream_id, heads, política de génesis).
 
 Recomendaciones *Offline-First*:
 - Usar registros append-only localmente; sincronizar intercambiando lotes con identificadores direccionados por contenido.
@@ -111,8 +115,8 @@ Recomendaciones *Offline-First*:
 
 Pasos:
 1. Implementar creación de Audit Entry (`schemas/audit-entry.schema.json`).
-2. Definir reglas de serialización canónica para hashing (p. ej., JSON Canonicalization Scheme).
-3. Encadenar entradas usando `prev_hash`.
+2. Definir reglas de serialización canónica para hashing (ver `specification/hash-and-canonicalization.md`).
+3. Encadenar entradas usando `prev_hash` dentro de cada stream y mantener `sequence_number` monotónico por `stream_id`.
 4. (Recomendado) Firmar eventos críticos con pruebas estilo W3C VC.
 
 Eventos mínimos a registrar:

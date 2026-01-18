@@ -44,4 +44,4 @@ INSTRUCTIONS:
 - [ ] Meeting minutes recorded (or equivalent community-legible record)
 - [ ] Signatures/thumbprints captured (as appropriate)
 - [ ] Evidence references include hashes where possible
-- [ ] Machine-readable consent record created (optional but recommended)
+- [ ] Machine-readable Consent Record created (REQUIRED for IR-Conformant; recommended even for pilots)

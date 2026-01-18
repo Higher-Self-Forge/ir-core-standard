@@ -10,7 +10,7 @@
 -->
 # Lista de verificación de materiales de consentimiento (Apoyo FPIC)
 
-> Traducción informativa; ver versión normativa si aplica. (Informativo / no normativo).
+> Plantilla localizada (es-PE). Para discrepancias técnicas del estándar, prevalece la versión inglesa del estándar; este documento, una vez adoptado por la comunidad, es normativo para el despliegue.
 
 <!--
 INSTRUCCIONES:
@@ -46,4 +46,4 @@ INSTRUCCIONES:
 - [ ] Se registran actas de reunión (o equivalente legible por la comunidad)
 - [ ] Se capturan firmas/huellas (según corresponda)
 - [ ] Las referencias de evidencia incluyen hashes cuando sea posible
-- [ ] Se crea un registro de consentimiento legible por máquina (opcional pero recomendado)
+- [ ] Se crea un Registro de Consentimiento legible por máquina (REQUERIDO para IR-Conformant; recomendado incluso para pilotos)

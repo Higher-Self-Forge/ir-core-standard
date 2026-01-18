@@ -3,7 +3,7 @@
   "$id": "https://ir-standard.org/schemas/v1.0/audit-entry.schema.json",
   "$comment": "IR v1.0 Core Standard | Copyright (c) 2026 Higher Self Forge Ltd (UK) - Owner/Rights Holder | Research & field lab: Qori Labs (Peru) | CC-BY-NC-SA-4.0",
   "title": "IR Audit Entry (Hash-Chain)",
-  "description": "An append-only audit entry intended to be chained via hashes. Implementations MUST ensure `entry_hash` is computed over a canonical serialization of the entry fields (excluding signatures), and MUST ensure `prev_hash` equals the previous entry's `entry_hash`. Implementations SHOULD sign high-impact events and MUST preserve ordering by `sequence_number`.",
+  "description": "An append-only audit entry intended to be chained via hashes. Implementations MUST ensure `entry_hash` is computed over a canonical serialization of the entry fields (excluding `entry_hash` and signatures) as defined in `specification/hash-and-canonicalization.md`, and MUST ensure `prev_hash` equals the previous entry's `entry_hash` within the same stream. Implementations SHOULD sign high-impact events and MUST preserve ordering by `sequence_number` within a stream.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -19,7 +19,12 @@
     "sequence_number": {
       "type": "integer",
       "minimum": 1,
-      "description": "Monotonic sequence number within an audit log stream. MUST increment by 1 for each new entry."
+      "description": "Monotonic sequence number within an audit log stream. MUST increment by 1 for each new entry in the same stream."
+    },
+    "stream_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Audit stream identifier. When multiple streams exist, `sequence_number` and `prev_hash` are interpreted within each stream. If omitted, a single implicit stream is assumed."
     },
     "timestamp": {
       "type": "string",
@@ -75,7 +80,7 @@
     "entry_hash": {
       "type": "string",
       "pattern": "^(?:[A-Fa-f0-9]{64}|z[1-9A-HJ-NP-Za-km-z]+|u[A-Za-z0-9\\-_]+)$",
-      "description": "Integrity hash of this entry computed over a canonical serialization of required fields. MUST be reproducible for verification. Any change to any covered field MUST change this value."
+      "description": "Integrity hash of this entry computed over a canonical serialization of all top-level fields except `entry_hash` and `signatures` (metadata and payload included when present). MUST be reproducible for verification. Any change to any covered field MUST change this value."
     },
     "signatures": {
       "type": "array",
@@ -101,6 +106,18 @@
         "created",
         "verificationMethod",
         "proofPurpose"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "jws"
+          ]
+        },
+        {
+          "required": [
+            "proofValue"
+          ]
+        }
       ],
       "properties": {
         "type": {
@@ -154,6 +171,7 @@
   "examples": [
     {
       "sequence_number": 42,
+      "stream_id": "audit-stream-1",
       "timestamp": "2026-01-11T03:14:15Z",
       "event_type": "DATA_ACCESS",
       "actor": {

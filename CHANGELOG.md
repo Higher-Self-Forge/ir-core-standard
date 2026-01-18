@@ -14,7 +14,7 @@ All notable changes to **IR v1.0 Core Standard** will be documented in this file
 
 This project aims to follow *Keep a Changelog* conventions and Semantic Versioning for releases.
 
-## [1.0.0] — 2026-01-13
+## [1.0.0] — 2026-01-18
 
 ### Added
 - Initial normative schema set:

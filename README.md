@@ -66,6 +66,8 @@ graph TD
 #### Especificación normativa y conformidad
 - Resumen del estándar IR v1.0: [specification/IR-v1.0-Standard-Summary.md](specification/IR-v1.0-Standard-Summary.md)
 - Lista de conformidad: [specification/conformance/checklist.md](specification/conformance/checklist.md)
+- Especificación de hashing y canonicalización: [specification/hash-and-canonicalization.md](specification/hash-and-canonicalization.md)
+- Formato mínimo de paquete de evidencia (informativo / no normativo): [specification/evidence-bundle-format.md](specification/evidence-bundle-format.md)
 - Guía de implementación: [guides/guia-implementacion.md](guides/guia-implementacion.md)
 - Guía para auditoría: [guides/guia-auditoria.md](guides/guia-auditoria.md)
 - Apéndice Perú (informativo / no normativo): [specification/appendix-peru.md](specification/appendix-peru.md)
@@ -83,7 +85,7 @@ graph TD
 - Declaración de custodia: [templates/governance/Custodian_Declaration_Template.es-PE.md](templates/governance/Custodian_Declaration_Template.es-PE.md)
 - Registro FPIC (plantilla legible): [templates/consent/FPIC_Record_Template.md](templates/consent/FPIC_Record_Template.md)
 - Lista de materiales de consentimiento: [templates/consent/Consent_Materials_Checklist.es-PE.md](templates/consent/Consent_Materials_Checklist.es-PE.md)
-- Acuerdo de Retorno de Valor (VRA): [templates/vra/Plantilla_VRA.md](templates/vra/Plantilla_VRA.md)
+- Acuerdo de Retorno de Valor (VRA): [templates/vra/VRA_Template.es-PE.md](templates/vra/VRA_Template.es-PE.md)
 
 ### Niveles de conformidad
 
@@ -141,6 +143,11 @@ Nota: El contenido en Quechua aparecerá en un directorio dedicado (por ejemplo,
 
 Este estándar se publica bajo CC BY-NC-SA 4.0 (ver LICENSE).
 Para consultas de licenciamiento comercial u opciones de doble licenciamiento, por favor contacte a Higher Self Forge Ltd.
+
+**Qué significa NC aquí (orientativo):**
+- Permitido: evaluación, despliegues comunitarios sin fines comerciales, uso académico o de investigación.
+- No permitido: reventa comercial o prestación de servicios comerciales basados en los artefactos estándar sin licencia comercial.
+- Para usos comerciales o doble licenciamiento, solicitar autorización a Higher Self Forge Ltd.
 
 ### Cómo citar (académico / institucional)
 
@@ -225,6 +232,8 @@ graph TD
 ### Normative specification & conformance
 - IR v1.0 Standard Summary: [specification/IR-v1.0-Standard-Summary.md](specification/IR-v1.0-Standard-Summary.md)
 - Conformance checklist: [specification/conformance/checklist.md](specification/conformance/checklist.md)
+- Hashing & canonicalization spec: [specification/hash-and-canonicalization.md](specification/hash-and-canonicalization.md)
+- Evidence bundle format (informative / non-normative): [specification/evidence-bundle-format.md](specification/evidence-bundle-format.md)
 - Implementation guide: [guides/implementation-guide.md](guides/implementation-guide.md)
 - Auditor guide: [guides/auditor-guide.md](guides/auditor-guide.md)
 - Peru appendix (informative / non-normative): [specification/appendix-peru.md](specification/appendix-peru.md)
@@ -300,6 +309,11 @@ Note: Quechua content will be published in a dedicated directory (e.g., locales/
 
 This standard is published under CC BY-NC-SA 4.0 (see LICENSE).
 For commercial licensing inquiries or dual-licensing options, please contact Higher Self Forge Ltd.
+
+**What NC means here (informative):**
+- Allowed: evaluation, community deployments without commercial intent, academic or research use.
+- Not allowed: commercial resale or commercial services based on the standard artifacts without a commercial license.
+- For commercial or dual-licensing requests, contact Higher Self Forge Ltd.
 
 ## Citation (academic / institutional)
 

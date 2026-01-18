@@ -12,6 +12,8 @@
 
 Esta guía apoya a auditores independientes o comunitarios en la evaluación de conformidad con IR v1.0. Asume acceso a un paquete de exportación de evidencias que contiene artefactos y registros.
 
+> Traducción informativa; la versión normativa es la guía en inglés: `guides/auditor-guide.md`.
+
 ---
 
 ## 1. Objetivos de auditoría
@@ -29,7 +31,9 @@ Una implementación DEBERÍA exportar un paquete que incluya:
 - Registros de consentimiento + referencias de evidencia
 - Registro de decisiones y actas de reunión
 - Flujo(s) completo(s) del registro de auditoría con notas del procedimiento de hashing
+- Manifiesto de streams de auditoría con stream_id y head por stream
 - Manifiesto de hashes de los archivos del paquete (se recomienda direccionamiento por contenido)
+- Método de canonicalización utilizado (ver `specification/hash-and-canonicalization.md`)
 
 ### 2.1 Terminología clave
 - **Hash-Chain (cadena hash):** secuencia de entradas de auditoría donde cada `entry_hash` se calcula incorporando el `prev_hash` de la entrada anterior; permite detectar alteraciones y preservar integridad.
@@ -68,9 +72,9 @@ Use un validador JSON Schema (draft 2020-12) para validar:
 - Para IR-Conformant+, exigir evidencia de hooks de prueba o reglas de política.
 
 ### Paso 6 — Integridad del registro de auditoría
-- Verificar que `sequence_number` incremente en 1.
-- Verificar que `prev_hash` sea igual al `entry_hash` anterior.
-- Recalcular `entry_hash` usando el método de canonicalización documentado (idealmente en un entorno White Room).
+- Verificar que `sequence_number` incremente en 1 dentro de cada `stream_id`.
+- Verificar que `prev_hash` sea igual al `entry_hash` anterior dentro de cada stream.
+- Recalcular `entry_hash` usando el método de canonicalización documentado (ver `specification/hash-and-canonicalization.md`) idealmente en un entorno White Room.
 - Para IR-Conformant+:
   - Verificar firmas en entradas SECURITY_ALERT y KILL_SWITCH_ACTIVATION.
 

@@ -18,16 +18,17 @@
       "minLength": 1,
       "description": "Unique boundary card identifier (UUID/URI)."
     },
-    "boundary_type": {
-      "type": "string",
-      "enum": [
-        "technical",
-        "social",
-        "legal",
-        "cultural"
-      ],
-      "description": "Boundary category."
-    },
+        "boundary_type": {
+          "type": "string",
+          "enum": [
+            "technical",
+            "social",
+            "legal",
+            "cultural",
+            "ethical"
+          ],
+          "description": "Boundary category."
+        },
     "statement": {
       "type": "string",
       "minLength": 1,
@@ -112,6 +113,18 @@
         "created",
         "verificationMethod",
         "proofPurpose"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "jws"
+          ]
+        },
+        {
+          "required": [
+            "proofValue"
+          ]
+        }
       ],
       "properties": {
         "type": {

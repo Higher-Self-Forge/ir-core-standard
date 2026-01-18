@@ -9,7 +9,7 @@
   SPDX-License-Identifier: CC-BY-NC-SA-4.0
 -->
 ---
-version: "1.0"
+version: "1.0.0"
 status: "stable"
 locale: "en"
 agreement_id: "{{VRA_ID}}"

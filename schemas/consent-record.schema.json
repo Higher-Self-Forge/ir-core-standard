@@ -233,6 +233,18 @@
         "verificationMethod",
         "proofPurpose"
       ],
+      "anyOf": [
+        {
+          "required": [
+            "jws"
+          ]
+        },
+        {
+          "required": [
+            "proofValue"
+          ]
+        }
+      ],
       "properties": {
         "type": {
           "type": "string",

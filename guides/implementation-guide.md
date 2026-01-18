@@ -73,8 +73,9 @@ Evidence pointers:
 Steps:
 1. Draft a Constitution Manifest (`schemas/constitution.schema.json`).
 2. Create Boundary Cards (`schemas/boundary-card.schema.json`) for high-risk constraints.
-3. Approve via Council decision and log in Decision Register.
-4. (Recommended) Compile constitution into enforcement rules and compute `compiled_hash`.
+3. Reference Boundary Cards from the Constitution to avoid duplication and drift.
+4. Approve via Council decision and log in Decision Register.
+5. (Recommended) Compile constitution into enforcement rules and compute `compiled_hash`.
 
 Pitfalls & mitigations:
 - **Pitfall:** boundaries exist only on paper.  
@@ -101,6 +102,7 @@ Steps:
    - Constitutions, boundary cards, consent records, decisions, audit entries
 2. Implement Graph Node support (`schemas/graph-node.schema.json`) for linking artifacts and decisions.
 3. Implement export bundles for audit and review (zip/tar with hashes).
+4. If multiple audit streams exist, include a stream manifest (stream_id list, heads, genesis policy).
 
 Offline-first recommendations:
 - Use append-only logs locally; sync by exchanging batches with content-addressed identifiers.
@@ -111,8 +113,8 @@ Offline-first recommendations:
 
 Steps:
 1. Implement Audit Entry creation (`schemas/audit-entry.schema.json`).
-2. Define canonical serialization rules for hashing (e.g., JSON Canonicalization Scheme).
-3. Chain entries using `prev_hash`.
+2. Define canonical serialization rules for hashing (see `specification/hash-and-canonicalization.md`).
+3. Chain entries using `prev_hash` within each stream and keep `sequence_number` monotonic per `stream_id`.
 4. (Recommended) Sign critical events with W3C VC-style proofs.
 
 Minimum events to record:

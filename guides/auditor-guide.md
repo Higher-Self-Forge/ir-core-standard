@@ -29,7 +29,13 @@ An implementation SHOULD export a bundle including:
 - Consent records + evidence references
 - Decision register and meeting minutes
 - Full audit log stream(s) with hashing procedure notes
+- Audit stream manifest describing stream_ids and heads
 - Hash manifest of bundle files (content-addressing recommended)
+- Canonicalization method used (see `specification/hash-and-canonicalization.md`)
+
+### 2.1 Key terminology
+- **Hash-Chain:** a sequence of audit entries where each `entry_hash` incorporates the prior `prev_hash`, enabling integrity checks and tamper detection.
+- **White Room:** an isolated, clean verification environment used to recompute hashes and validate evidence bundles without contamination from the audited system.
 
 ---
 
@@ -64,9 +70,9 @@ Use a JSON Schema validator (draft 2020-12) to validate:
 - For IR-Conformant+, require test hooks or policy rules evidence.
 
 ### Step 6 — Audit log integrity
-- Verify `sequence_number` increments by 1.
-- Verify `prev_hash` equals prior `entry_hash`.
-- Recompute `entry_hash` using the documented canonicalization method.
+- Verify `sequence_number` increments by 1 within each `stream_id`.
+- Verify `prev_hash` equals prior `entry_hash` within each stream.
+- Recompute `entry_hash` using the documented canonicalization method (see `specification/hash-and-canonicalization.md`).
 - For IR-Conformant+:
   - Verify signatures on SECURITY_ALERT and KILL_SWITCH_ACTIVATION entries.
 

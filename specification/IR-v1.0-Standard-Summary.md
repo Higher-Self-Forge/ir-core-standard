@@ -39,15 +39,21 @@ A **Graph Node** is a general-purpose structure for representing entities, event
 
 Schema: `schemas/graph-node.schema.json`
 
+Note: Graph Node `id` MUST be a UUID. Other artifact identifiers MAY be URI/URN as allowed by their schemas.
+
 ### 2.2 Constitution Manifests
 A **Constitution Manifest** declares enforceable principles and boundaries that constrain system behavior and governance decision-making, including consent triggers.
 
 Schema: `schemas/constitution.schema.json`
 
+Boundary content SHOULD be maintained in Boundary Cards and referenced from the Constitution to avoid drift.
+
 ### 2.3 Boundary Cards
 A **Boundary Card** is an ethical/legal/cultural/technical constraint expressed as a machine-readable object suitable for enforcement hooks and human review.
 
 Schema: `schemas/boundary-card.schema.json`
+
+Boundary Cards are the source of truth; Constitutions should reference them rather than duplicate content.
 
 ### 2.4 Consent Records (FPIC)
 A **Consent Record** documents Free, Prior, and Informed Consent for a defined scope, with status transitions and evidence references. Consent records SHOULD include alignment notes to CARE Principles.
@@ -58,6 +64,8 @@ Schema: `schemas/consent-record.schema.json`
 An **Audit Entry** is an append-only event record designed to be hash-chained. Implementations MUST preserve chain integrity and SHOULD support cryptographic attestation for high-impact events.
 
 Schema: `schemas/audit-entry.schema.json`
+
+Sequence numbers and `prev_hash` are interpreted within a stream; deployments may operate multiple streams.
 
 ---
 
@@ -81,6 +89,8 @@ Implementations MUST declare one of:
 - **IR-Conformant+** (extended) — stronger cryptographic verification, automated reporting, runtime enforcement hooks
 
 See: `specification/conformance/checklist.md`
+
+Hashing & canonicalization: `specification/hash-and-canonicalization.md`
 
 ---
 

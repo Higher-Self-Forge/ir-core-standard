@@ -56,9 +56,12 @@
       "pattern": "^(?:[A-Fa-f0-9]{64}|z[1-9A-HJ-NP-Za-km-z]+|u[A-Za-z0-9\\-_]+)$",
       "description": "Optional integrity hash over a canonical representation of the node content. Recommended for artifacts and decisions."
     },
-    "signature": {
-      "$ref": "#/$defs/Signature",
-      "description": "Optional cryptographic proof/signature covering the node's canonical form."
+    "signatures": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Signature"
+      },
+      "description": "Optional cryptographic proofs/signatures covering the node's canonical form."
     }
   },
   "$defs": {
@@ -105,6 +108,18 @@
         "created",
         "verificationMethod",
         "proofPurpose"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "jws"
+          ]
+        },
+        {
+          "required": [
+            "proofValue"
+          ]
+        }
       ],
       "properties": {
         "type": {
@@ -181,13 +196,15 @@
         }
       ],
       "content_hash": "a3f2c7d78f8d7ab3c9b4a12cdbd2d3c8f056e4d1b8265f8c137f03c0d8d7a1b2",
-      "signature": {
-        "type": "Ed25519Signature2020",
-        "created": "2026-01-10T15:22:00Z",
-        "verificationMethod": "did:key:z6MktQoriCustodian1#z6MktQoriCustodian1",
-        "proofPurpose": "assertionMethod",
-        "proofValue": "z3vQJkQvExampleSignatureValue"
-      }
+      "signatures": [
+        {
+          "type": "Ed25519Signature2020",
+          "created": "2026-01-10T15:22:00Z",
+          "verificationMethod": "did:key:z6MktQoriCustodian1#z6MktQoriCustodian1",
+          "proofPurpose": "assertionMethod",
+          "proofValue": "z3vQJkQvExampleSignatureValue"
+        }
+      ]
     }
   ]
 }

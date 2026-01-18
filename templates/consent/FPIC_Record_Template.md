@@ -9,7 +9,7 @@
   SPDX-License-Identifier: CC-BY-NC-SA-4.0
 -->
 ---
-version: "1.0"
+version: "1.0.0"
 status: "stable"
 locale_primary: "es-PE"
 locales_supported:
@@ -25,7 +25,7 @@ consent_session_id: "{{CONSENT_SESSION_ID}}"
 INSTRUCTIONS:
 - This template captures Free, Prior, and Informed Consent in a community-legible format.
 - Add translations under the language sections.
-- Link to machine-readable Consent Record objects (schemas/consent-record.schema.json) when possible.
+- Link to machine-readable Consent Record objects (schemas/consent-record.schema.json) (required for IR-Conformant).
 -->
 
 ## A. Consent Scope
