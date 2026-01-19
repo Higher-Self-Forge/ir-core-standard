@@ -5,7 +5,7 @@
   "title": "IR-Conformant+ Assertions (Informative / Non-Normative)",
   "allOf": [
     {
-      "$ref": "../../schemas/audit-entry.schema.json"
+      "$ref": "audit-entry.schema.json"
     },
     {
       "if": {

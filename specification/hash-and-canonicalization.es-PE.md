@@ -8,7 +8,7 @@
 
   SPDX-License-Identifier: CC-BY-NC-SA-4.0
 -->
-# Hashing y Canonicalización (Normativo)
+# Hashing y Canonicalización (Traducción informativa)
 
 > Traducción informativa; la versión normativa es `specification/hash-and-canonicalization.md`.
 

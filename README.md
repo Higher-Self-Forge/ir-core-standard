@@ -143,6 +143,7 @@ Nota: El contenido en Quechua aparecerá en un directorio dedicado (por ejemplo,
 
 Este estándar se publica bajo CC BY-NC-SA 4.0 (ver LICENSE).
 Para consultas de licenciamiento comercial u opciones de doble licenciamiento, por favor contacte a Higher Self Forge Ltd.
+Componentes de terceros (por ejemplo, la fuente Inter) se licencian por separado; ver THIRD_PARTY_NOTICES.md.
 
 **Qué significa NC aquí (orientativo):**
 - Permitido: evaluación, despliegues comunitarios sin fines comerciales, uso académico o de investigación.
@@ -310,6 +311,7 @@ Note: Quechua content will be published in a dedicated directory (e.g., locales/
 
 This standard is published under CC BY-NC-SA 4.0 (see LICENSE).
 For commercial licensing inquiries or dual-licensing options, please contact Higher Self Forge Ltd.
+Third-party components (e.g., the Inter font) are licensed separately; see THIRD_PARTY_NOTICES.md.
 
 **What NC means here (informative):**
 - Allowed: evaluation, community deployments without commercial intent, academic or research use.
