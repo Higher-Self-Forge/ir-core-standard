@@ -18,6 +18,8 @@ effective_date: "{{EFFECTIVE_DATE}}"
 
 # Acuerdo de Retorno de Valor (VRA) — {{COMMUNITY_NAME}} × {{PROVIDER_NAME}}
 
+> Plantilla localizada (es-PE). Este documento es una traducción informativa del estándar IR. Una vez adoptado por una comunidad, es normativo para la gobernanza de ese despliegue, pero no sustituye la especificación normativa en inglés.
+
 <!--
 INSTRUCCIONES:
 - Un VRA documenta los términos de la alianza y los compromisos de retorno de valor.

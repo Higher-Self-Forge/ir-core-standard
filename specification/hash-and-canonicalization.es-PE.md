@@ -10,7 +10,7 @@
 -->
 # Hashing y Canonicalización (Traducción informativa)
 
-> Traducción informativa; la versión normativa es `specification/hash-and-canonicalization.md`.
+> Traducción informativa del estándar IR. La versión normativa es `specification/hash-and-canonicalization.md`.
 
 Este documento define el método de canonicalización y hashing usado para entradas de auditoría IR.
 

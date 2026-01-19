@@ -87,6 +87,10 @@ graph TD
 - Lista de materiales de consentimiento: [templates/consent/Consent_Materials_Checklist.es-PE.md](templates/consent/Consent_Materials_Checklist.es-PE.md)
 - Acuerdo de Retorno de Valor (VRA): [templates/vra/VRA_Template.es-PE.md](templates/vra/VRA_Template.es-PE.md)
 
+### Validación y herramientas
+
+Para validar esquemas, use un validador compatible con JSON Schema draft 2020-12 (p. ej., Ajv u otro). El esquema de aserciones IR-Conformant+ requiere resolución de `$ref`; configure su validador para resolver URIs basadas en `$id`.
+
 ### Niveles de conformidad
 
 IR v1.0 define dos niveles prácticos de conformidad:
@@ -182,7 +186,7 @@ Ver [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ### Organización
 
-Titular de derechos (Owner/Rights Holder): Higher Self Forge Ltd (UK). Laboratorio de investigación y campo (Research & field lab): Qori Labs (Peru).
+Titular de derechos (Owner/Rights Holder): [Higher Self Forge Ltd (UK)](https://higherself.ai). Laboratorio de investigación y campo (Research & field lab): [Qori Labs (Peru)](https://q-ori.pe).
 
 Nota: La traducción oficial al Quechua (Runasimi) se encuentra actualmente en desarrollo en coordinación con autoridades lingüísticas locales.
 
@@ -254,6 +258,10 @@ graph TD
 - FPIC Record template: [templates/consent/FPIC_Record_Template.md](templates/consent/FPIC_Record_Template.md)
 - Consent Materials Checklist: [templates/consent/Consent_Materials_Checklist.md](templates/consent/Consent_Materials_Checklist.md)
 - Value Return Agreement (VRA): [templates/vra/VRA_Template.md](templates/vra/VRA_Template.md)
+
+### Validation & tooling
+
+To validate schemas, use any JSON Schema draft 2020-12 validator (e.g., Ajv or equivalent). The IR-Conformant+ assertions schema depends on `$ref` resolution; configure your validator to resolve URIs based on `$id`.
 
 ## Conformance levels
 
@@ -350,6 +358,6 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Stewardship
 
-Owner/Rights Holder: Higher Self Forge Ltd (UK). Research & field lab: Qori Labs (Peru).
+Owner/Rights Holder: [Higher Self Forge Ltd (UK)](https://higherself.ai). Research & field lab: [Qori Labs (Peru)](https://q-ori.pe).
 
 Note: Official Runasimi (Quechua) translation is currently under development in coordination with local linguistic authorities.

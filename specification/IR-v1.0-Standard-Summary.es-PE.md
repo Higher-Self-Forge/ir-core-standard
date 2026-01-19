@@ -10,7 +10,7 @@
 -->
 # Resumen del Estándar IR v1.0 — Infraestructura Soberana e Inteligencia Distribuida
 
-> Traducción informativa; la versión normativa es `specification/IR-v1.0-Standard-Summary.md`.
+> Traducción informativa del estándar IR. La versión normativa es `specification/IR-v1.0-Standard-Summary.md`.
 
 Este documento ofrece una visión concisa del **IR v1.0 Core Standard** y de los artefactos normativos en este repositorio.
 

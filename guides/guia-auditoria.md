@@ -12,7 +12,7 @@
 
 Esta guía apoya a auditores independientes o comunitarios en la evaluación de conformidad con IR v1.0. Asume acceso a un paquete de exportación de evidencias que contiene artefactos y registros.
 
-> Traducción informativa; la versión normativa es la guía en inglés: `guides/auditor-guide.md`.
+> Traducción informativa del estándar IR. La versión normativa es la guía en inglés: `guides/auditor-guide.md`.
 
 ---
 

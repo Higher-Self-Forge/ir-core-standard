@@ -17,7 +17,7 @@ community_name: "{{COMMUNITY_NAME}}"
 
 # Carta del Consejo — {{COMMUNITY_NAME}}
 
-> Plantilla localizada (es-PE). Para discrepancias técnicas del estándar, prevalece la versión inglesa del estándar; este documento, una vez adoptado por la comunidad, es normativo para el despliegue.
+> Plantilla localizada (es-PE). Este documento es una traducción informativa del estándar IR. Una vez adoptado por una comunidad, es normativo para la gobernanza de ese despliegue, pero no sustituye la especificación normativa en inglés.
 
 <!--
 INSTRUCCIONES:

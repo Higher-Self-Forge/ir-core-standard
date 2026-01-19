@@ -12,7 +12,7 @@
 
 Esta guía ayuda a las entidades implementadoras a construir un sistema conforme a IR v1.0 (Ayni Algorítmico). Está escrita para ser accionable por equipos de ingeniería y facilitadores de gobernanza.
 
-> Traducción informativa; la versión normativa es la guía en inglés: `guides/implementation-guide.md`.
+> Traducción informativa del estándar IR. La versión normativa es la guía en inglés: `guides/implementation-guide.md`.
 
 ---
 

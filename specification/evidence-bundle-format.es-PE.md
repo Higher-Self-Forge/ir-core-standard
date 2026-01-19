@@ -10,7 +10,7 @@
 -->
 # Formato de paquete de evidencia (Informativo / No normativo)
 
-> Traducción informativa; la versión normativa es `specification/evidence-bundle-format.md`.
+> Traducción informativa del estándar IR. La versión normativa es `specification/evidence-bundle-format.md`.
 
 Este documento describe un formato mínimo y repetible de paquete de evidencia para apoyar auditorías y revisión comunitaria.
 

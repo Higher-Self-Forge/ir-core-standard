@@ -12,7 +12,7 @@
 
 Esta lista define requisitos normativos de conformidad para implementaciones **IR-Conformant** e **IR-Conformant+**.
 
-> Traducción informativa; ver versión normativa en inglés al final.
+> Traducción informativa del estándar IR. La sección normativa en inglés comienza más abajo.
 
 **Cómo usarla**
 - Marque la casilla cuando el requisito se cumpla.
@@ -54,6 +54,8 @@ Nota (informativa): Para validación automática adicional de eventos críticos,
 - [ ] **IR-RES-001:** El despliegue DEBERÍA documentar prácticas de resiliencia (backup/restore, recuperación ante desastres y gestión de colas offline). | Evidence: {{EVIDENCE_IR-RES-001}}
 
 ---
+
+**Normative section begins here (English).**
 
 # Conformance Checklist — IR v1.0
 
